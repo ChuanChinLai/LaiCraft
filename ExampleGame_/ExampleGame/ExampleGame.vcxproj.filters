@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{0dd96128-4fb4-47d5-8790-afc2764645fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LaiCraft">
+      <UniqueIdentifier>{84e9c7cf-eb73-411e-9942-83c1525412e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World">
+      <UniqueIdentifier>{916968bc-f67b-4124-a614-7c9206f4f028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Block">
+      <UniqueIdentifier>{4510e02a-d2a8-47d1-89f5-ba4a9bc36a6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Chunk">
+      <UniqueIdentifier>{b1db51c7-4d81-425a-ad72-08375ccacdde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Generation">
+      <UniqueIdentifier>{0ff0f3ef-625d-4bf8-9f46-8091502b7bf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Generation\Terrain">
+      <UniqueIdentifier>{a763ef09-2232-4498-8478-221bb0c02155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Generation\Biome">
+      <UniqueIdentifier>{1cdda890-0d22-4de9-9a38-afcfb7c38088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="World\Generation\Structures">
+      <UniqueIdentifier>{751cda89-42e6-49fe-8abd-594b3bfef334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Item">
+      <UniqueIdentifier>{b27d4908-0375-4557-a6ff-c5c31a73952e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseClass">
+      <UniqueIdentifier>{fc56b782-4129-41ce-817a-15b361043d31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{d60f9fbf-6400-45c5-b867-abcd17bcfe30}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GamingScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="LaiCraft\Player.cpp">
+      <Filter>LaiCraft</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\BlockData.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\World.cpp">
+      <Filter>World</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Chunk\Chunk.cpp">
+      <Filter>World\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\ChunkBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\BlockDatabase.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Chunk\ChunkSection.cpp">
+      <Filter>World\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\IBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\GrassBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\GravelBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Chunk\ChunkManager.cpp">
+      <Filter>World\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\WaterBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\SandBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\DirtBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Terrain\ClassicWorldGenerator.cpp">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Terrain\SuperFlatGenerator.cpp">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Biome\Biome.cpp">
+      <Filter>World\Generation\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Biome\GrasslandBiome.cpp">
+      <Filter>World\Generation\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Biome\DesertBiome.cpp">
+      <Filter>World\Generation\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Biome\TemperateForestBiome.cpp">
+      <Filter>World\Generation\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Biome\OceanBiome.cpp">
+      <Filter>World\Generation\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Biome\LightForestBiome.cpp">
+      <Filter>World\Generation\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Terrain\TestGenerator.cpp">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Structures\StructureBuilder.cpp">
+      <Filter>World\Generation\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Generation\Structures\TreeGenerator.cpp">
+      <Filter>World\Generation\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\LeafBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\TrunkBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="World\Block\CactusBlock.cpp">
+      <Filter>World\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Item\Material.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Item\ItemStack.cpp">
+      <Filter>Item</Filter>
+    </ClCompile>
+    <ClCompile Include="LaiCraft\GameEngine.cpp">
+      <Filter>LaiCraft</Filter>
+    </ClCompile>
+    <ClCompile Include="LaiCraft\LaiCraftGame.cpp">
+      <Filter>LaiCraft</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer\RenderingSystem.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene\GamingScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="LaiCraft\Player.h">
+      <Filter>LaiCraft</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Chunk\IChunk.h">
+      <Filter>World\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\ChunkBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\BlockType.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\BlockData.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\World.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Chunk\Chunk.h">
+      <Filter>World\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Chunk\ChunkSection.h">
+      <Filter>World\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\BlockDatabase.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\WorldConstants.h">
+      <Filter>World</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\IBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\GrassBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\GravelBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Chunk\ChunkManager.h">
+      <Filter>World\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\WaterBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\SandBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\DirtBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Terrain\ClassicWorldGenerator.h">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Terrain\SuperFlatGenerator.h">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Terrain\TerrainGenerator.h">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Biome\Biome.h">
+      <Filter>World\Generation\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Biome\GrasslandBiome.h">
+      <Filter>World\Generation\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Biome\DesertBiome.h">
+      <Filter>World\Generation\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Biome\TemperateForestBiome.h">
+      <Filter>World\Generation\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Biome\OceanBiome.h">
+      <Filter>World\Generation\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Biome\LightForestBiome.h">
+      <Filter>World\Generation\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Terrain\TestGenerator.h">
+      <Filter>World\Generation\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Structures\StructureBuilder.h">
+      <Filter>World\Generation\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Generation\Structures\TreeGenerator.h">
+      <Filter>World\Generation\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\LeafBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\TrunkBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="World\Block\CactusBlock.h">
+      <Filter>World\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Item\Material.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Item\ItemStack.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="LaiCraft\GameEngine.h">
+      <Filter>LaiCraft</Filter>
+    </ClInclude>
+    <ClInclude Include="LaiCraft\LaiCraftGame.h">
+      <Filter>LaiCraft</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\RenderingSystem.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
