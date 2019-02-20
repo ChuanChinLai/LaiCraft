@@ -31,7 +31,7 @@ namespace LaiEngine
 
 	protected: 
 
-		bool m_bIsGameRunning;
+		bool m_bIsGameRunning = false;
 
 	private:
 

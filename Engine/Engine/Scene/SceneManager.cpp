@@ -46,21 +46,11 @@ void LaiEngine::SceneManager::Update(float dt)
 	}
 }
 
-void LaiEngine::SceneManager::Render(MainRenderer* renderer)
+void LaiEngine::SceneManager::Draw(sf::RenderWindow* window)
 {
 	if (m_pCurrentScene != nullptr)
 	{
-		m_pCurrentScene->SubmitDataToBeRendered(renderer);
-	}
-
-	if (renderer != nullptr)
-	{
-		renderer->Draw();
-	}
-
-	if (renderer != nullptr && m_pWindow != nullptr)
-	{
-		//renderer->DrawUI(m_pWindow);
+		m_pCurrentScene->Draw(window);
 	}
 }
 
@@ -77,10 +67,10 @@ void LaiEngine::SceneManager::SetWindow(sf::RenderWindow * window)
 	m_pWindow = window;
 }
 
-void LaiEngine::SceneManager::HandleInput(sf::RenderWindow* window)
+void LaiEngine::SceneManager::InputProcess(sf::RenderWindow* window)
 {
 	if (m_pCurrentScene != nullptr)
 	{
-		m_pCurrentScene->HandleInput(window);
+		m_pCurrentScene->InputProcess(window);
 	}
 }

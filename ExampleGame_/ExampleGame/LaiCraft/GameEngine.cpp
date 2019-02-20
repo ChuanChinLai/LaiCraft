@@ -1,25 +1,24 @@
 #include "GameEngine.h"
 
 #include <Engine/Scene/SceneManager.h>
-#include <Engine/Utility/FPSCounter.h>
+#include <Engine/Utility/Timer.h>
 #include <ExampleGame/Scene/GamingScene.h>
-#include <ExampleGame/World/Block/BlockDatabase.h>
+#include <ExampleGame/LaiCraft/LaiCraftGame.h>
+#include <ExampleGame/UI/TestUI.h>
+
+#include <Engine/Font/Font.h>
 
 #include <SFML/Graphics.hpp>
 #include <glad/glad.h>
 
 
-float LaiEngine::GameEngine::s_timeElapsed = 0.0f;
-
-LaiEngine::GameEngine::GameEngine(std::string title) : Engine(title), m_pRenderer(nullptr)
+LaiEngine::GameEngine::GameEngine(std::string title) : Engine(title)
 {
 
 }
 
 bool LaiEngine::GameEngine::Init()
 {
-	BlockDatabase::Get();
-
 	try
 	{
 		SceneManager* pSceneManager = GetSceneManager();
@@ -33,8 +32,6 @@ bool LaiEngine::GameEngine::Init()
 		{
 			throw std::runtime_error("Failed to initialize the SceneManager");
 		}
-
-		m_pRenderer = new MainRenderer();
 	}
 	catch (std::runtime_error& error) 
 	{
@@ -48,11 +45,7 @@ bool LaiEngine::GameEngine::Init()
 
 void LaiEngine::GameEngine::GameLoop()
 {
-	sf::Clock timer; 
-	sf::Clock dt;
-	sf::Time m;
-
-	FPSCounter fpsCounter;
+	Timer timer;
 
 	sf::RenderWindow* pRenderWindow = GetRenderWindow();
 	SceneManager* pSceneManager = GetSceneManager();
@@ -62,35 +55,31 @@ void LaiEngine::GameEngine::GameLoop()
 
 	while (m_bIsGameRunning)
 	{
-		auto deltaTime = timer.restart();
+		auto deltaTime = timer.dt();
 
-		pSceneManager->Update(deltaTime.asSeconds());
-		pSceneManager->HandleInput(pRenderWindow);
+		pSceneManager->Update(deltaTime);
+		pSceneManager->InputProcess(pRenderWindow);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		pSceneManager->Render(m_pRenderer);
+		pSceneManager->Draw(pRenderWindow);
 
 		pRenderWindow->display();
 
 		HandleEvents();
 
-		fpsCounter.Update();
-
-		m = dt.restart();
-		s_timeElapsed += m.asSeconds();
+		timer.Update();
 	}
 }
 
 void LaiEngine::GameEngine::Release()
 {
-	if (m_pRenderer != nullptr)
-	{
-		delete m_pRenderer;
-	}
+	//if (m_pRenderer != nullptr)
+	//{
+	//	delete m_pRenderer;
+	//}
 
-	BlockDatabase::Release();
 	//Camera::Release();
 }
 

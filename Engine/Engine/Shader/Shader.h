@@ -13,7 +13,7 @@ namespace LaiEngine
 	{
 	public:
 		Shader(const std::string& vertexFile, const std::string& fragmentFile);
-		~Shader();
+		virtual ~Shader();
 
 		void UseProgram() const;
 
@@ -24,7 +24,6 @@ namespace LaiEngine
 		void SetUniformValue(GLuint location, const glm::vec3& vec);
 		void SetUniformValue(GLuint location, const glm::vec4& vec);
 		void SetUniformValue(GLuint location, const glm::mat4& matrix);
-
 
 	protected:
 		virtual void GetUniforms() = 0;

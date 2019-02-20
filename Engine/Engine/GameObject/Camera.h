@@ -10,8 +10,9 @@ namespace LaiEngine
 	{
 	public:
 
-		static Camera* Get();
-		//static void Release();
+		static Camera* Instance();
+		static void Delete();
+
 		void Update();
 		void SetGameObject(GameObject* object);
 
@@ -22,6 +23,8 @@ namespace LaiEngine
 	private:
 
 		Camera();
+
+		static Camera* m_pInstance;
 
 		const GameObject* m_pGameObject;
 

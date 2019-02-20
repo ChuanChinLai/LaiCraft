@@ -205,7 +205,6 @@ void LaiEngine::Model::CreateVBO(const std::vector<sVertex>& vertices)
 	{
 		std::cout << error.what() << std::endl;
 	}
-
 }
 
 void LaiEngine::Model::CreateEBO(const std::vector<GLuint>& indices)

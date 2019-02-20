@@ -97,13 +97,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm;$(SolutionDir)External\freetype-2.9.1\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>
@@ -124,13 +124,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm;$(SolutionDir)External\freetype-2.9.1\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>
@@ -153,15 +153,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm;$(SolutionDir)External\freetype-2.9.1\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>
@@ -184,15 +184,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)External;$(SolutionDir)External\SFML\Include;$(SolutionDir)External\glad\Include;$(SolutionDir)ExampleGame_;C:\Users\Chuan-Chin Lai\Desktop\OpenGL\External\glm;$(SolutionDir)External\freetype-2.9.1\Include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;freetype.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>
@@ -208,81 +208,26 @@
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Item\ItemStack.cpp" />
-    <ClCompile Include="Item\Material.cpp" />
+    <ClCompile Include="BaseClass\IUserInterface.cpp" />
     <ClCompile Include="LaiCraft\GameEngine.cpp" />
     <ClCompile Include="LaiCraft\LaiCraftGame.cpp" />
-    <ClCompile Include="LaiCraft\Player.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Renderer\QuadRenderer.cpp" />
     <ClCompile Include="Renderer\RenderingSystem.cpp" />
+    <ClCompile Include="Renderer\SkyboxRenderer.cpp" />
     <ClCompile Include="Scene\GamingScene.cpp" />
-    <ClCompile Include="World\Block\CactusBlock.cpp" />
-    <ClCompile Include="World\Block\TrunkBlock.cpp" />
-    <ClCompile Include="World\Block\BlockData.cpp" />
-    <ClCompile Include="World\Block\BlockDatabase.cpp" />
-    <ClCompile Include="World\Block\ChunkBlock.cpp" />
-    <ClCompile Include="World\Block\DirtBlock.cpp" />
-    <ClCompile Include="World\Block\GrassBlock.cpp" />
-    <ClCompile Include="World\Block\GravelBlock.cpp" />
-    <ClCompile Include="World\Block\IBlock.cpp" />
-    <ClCompile Include="World\Block\LeafBlock.cpp" />
-    <ClCompile Include="World\Block\SandBlock.cpp" />
-    <ClCompile Include="World\Block\WaterBlock.cpp" />
-    <ClCompile Include="World\Chunk\Chunk.cpp" />
-    <ClCompile Include="World\Chunk\ChunkManager.cpp" />
-    <ClCompile Include="World\Chunk\ChunkSection.cpp" />
-    <ClCompile Include="World\Generation\Biome\Biome.cpp" />
-    <ClCompile Include="World\Generation\Biome\DesertBiome.cpp" />
-    <ClCompile Include="World\Generation\Biome\GrasslandBiome.cpp" />
-    <ClCompile Include="World\Generation\Biome\LightForestBiome.cpp" />
-    <ClCompile Include="World\Generation\Biome\OceanBiome.cpp" />
-    <ClCompile Include="World\Generation\Biome\TemperateForestBiome.cpp" />
-    <ClCompile Include="World\Generation\Structures\StructureBuilder.cpp" />
-    <ClCompile Include="World\Generation\Structures\TreeGenerator.cpp" />
-    <ClCompile Include="World\Generation\Terrain\ClassicWorldGenerator.cpp" />
-    <ClCompile Include="World\Generation\Terrain\SuperFlatGenerator.cpp" />
-    <ClCompile Include="World\Generation\Terrain\TestGenerator.cpp" />
-    <ClCompile Include="World\World.cpp" />
+    <ClCompile Include="UI\TestUI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Item\ItemStack.h" />
-    <ClInclude Include="Item\Material.h" />
+    <ClInclude Include="BaseClass\IGameSystem.h" />
+    <ClInclude Include="BaseClass\IUserInterface.h" />
     <ClInclude Include="LaiCraft\GameEngine.h" />
     <ClInclude Include="LaiCraft\LaiCraftGame.h" />
-    <ClInclude Include="LaiCraft\Player.h" />
+    <ClInclude Include="Renderer\QuadRenderer.h" />
     <ClInclude Include="Renderer\RenderingSystem.h" />
+    <ClInclude Include="Renderer\SkyboxRenderer.h" />
     <ClInclude Include="Scene\GamingScene.h" />
-    <ClInclude Include="World\Block\CactusBlock.h" />
-    <ClInclude Include="World\Block\TrunkBlock.h" />
-    <ClInclude Include="World\Block\BlockData.h" />
-    <ClInclude Include="World\Block\BlockDatabase.h" />
-    <ClInclude Include="World\Block\BlockType.h" />
-    <ClInclude Include="World\Block\ChunkBlock.h" />
-    <ClInclude Include="World\Block\DirtBlock.h" />
-    <ClInclude Include="World\Block\GrassBlock.h" />
-    <ClInclude Include="World\Block\GravelBlock.h" />
-    <ClInclude Include="World\Block\IBlock.h" />
-    <ClInclude Include="World\Block\LeafBlock.h" />
-    <ClInclude Include="World\Block\SandBlock.h" />
-    <ClInclude Include="World\Block\WaterBlock.h" />
-    <ClInclude Include="World\Chunk\Chunk.h" />
-    <ClInclude Include="World\Chunk\ChunkManager.h" />
-    <ClInclude Include="World\Chunk\ChunkSection.h" />
-    <ClInclude Include="World\Chunk\IChunk.h" />
-    <ClInclude Include="World\Generation\Biome\Biome.h" />
-    <ClInclude Include="World\Generation\Biome\DesertBiome.h" />
-    <ClInclude Include="World\Generation\Biome\GrasslandBiome.h" />
-    <ClInclude Include="World\Generation\Biome\LightForestBiome.h" />
-    <ClInclude Include="World\Generation\Biome\OceanBiome.h" />
-    <ClInclude Include="World\Generation\Biome\TemperateForestBiome.h" />
-    <ClInclude Include="World\Generation\Structures\StructureBuilder.h" />
-    <ClInclude Include="World\Generation\Structures\TreeGenerator.h" />
-    <ClInclude Include="World\Generation\Terrain\ClassicWorldGenerator.h" />
-    <ClInclude Include="World\Generation\Terrain\SuperFlatGenerator.h" />
-    <ClInclude Include="World\Generation\Terrain\TerrainGenerator.h" />
-    <ClInclude Include="World\Generation\Terrain\TestGenerator.h" />
-    <ClInclude Include="World\WorldConstants.h" />
-    <ClInclude Include="World\World.h" />
+    <ClInclude Include="UI\TestUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,6 @@
-#include <SFML/Graphics.hpp>
-
 #include "LaiCraft/GameEngine.h"
 
+#include <iostream>
 
 int main()
 {
@@ -12,9 +11,9 @@ int main()
 		game.Release();
 	}
 
-//#if defined _DEBUG
+#if defined _DEBUG
 	_CrtDumpMemoryLeaks();
-//#endif // _DEBUG
+#endif // _DEBUG
 
 
 	return 0;

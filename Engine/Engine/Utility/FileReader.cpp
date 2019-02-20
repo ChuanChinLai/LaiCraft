@@ -16,5 +16,10 @@ std::string FileReader(const std::string & path)
 	std::stringstream stream;
 
 	stream << inFile.rdbuf();
-	return stream.str();
+
+	std::string res = stream.str();
+
+	stream.clear();
+
+	return res;
 }

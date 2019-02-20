@@ -5,6 +5,7 @@
 
 LaiEngine::CubeTexture::CubeTexture(const std::string & file)
 {
+
 }
 
 LaiEngine::CubeTexture::~CubeTexture()

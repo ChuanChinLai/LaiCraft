@@ -10,7 +10,6 @@ namespace sf
 namespace LaiEngine
 {
 	class IGameScene;
-	class MainRenderer; 
 
 	class SceneManager
 	{
@@ -27,11 +26,12 @@ namespace LaiEngine
 		IGameScene* GetGameScene();
 
 		void Update(float dt);
-		void Render(MainRenderer* renderer);
 		void Release();
 
+		void Draw(sf::RenderWindow* window);
+
 		void SetWindow(sf::RenderWindow* window);
-		void HandleInput(sf::RenderWindow* window);
+		void InputProcess(sf::RenderWindow* window);
 
 	private:
 

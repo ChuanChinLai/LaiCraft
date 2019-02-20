@@ -1,25 +1,33 @@
 #pragma once
 
-#include <Engine/Game/IGameInstance.h>
+#include <SFML/Graphics.hpp>
 
 namespace LaiEngine
 {
-	class LaiCraftGame : public IGameInstance
+	class RenderingSystem;
+	class TestUI;
+
+	class LaiCraftGame
 	{
 	public:
 
 		static LaiCraftGame* Instance();
 		static void Delete();
 
-		virtual void Init()	override;
-		virtual void Update() override;
-		virtual void Release() override;
+		void Init();
+		void Update();
+		void Release();
+
+		void Draw(sf::RenderWindow* window);
 
 	private:
 
-		static LaiCraftGame* m_instance;
+		LaiCraftGame() = default;
 
-		bool m_bIsGameRunning = false;
+		static LaiCraftGame* m_pInstance;
+
+		RenderingSystem* m_pRenderingSystem = nullptr;
+		TestUI* m_pTestUI = nullptr;
 
 	};
 }

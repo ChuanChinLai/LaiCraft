@@ -4,17 +4,29 @@
 
 #include <memory>
 
-//LaiEngine::Camera* LaiEngine::Camera::mainCamera = nullptr;
+LaiEngine::Camera* LaiEngine::Camera::m_pInstance = nullptr;
 
 LaiEngine::Camera::Camera() : m_pGameObject(nullptr)
 {
 	position = { 0, 0, 3.5 };
 }
 
-LaiEngine::Camera* LaiEngine::Camera::Get()
+LaiEngine::Camera * LaiEngine::Camera::Instance()
 {
-	static std::unique_ptr<Camera> mainCamera(new Camera);
-	return mainCamera.get();
+	if (m_pInstance == nullptr)
+	{
+		m_pInstance = new Camera;
+	}
+
+	return m_pInstance;
+}
+
+void LaiEngine::Camera::Delete()
+{
+	if (m_pInstance != nullptr)
+	{
+		delete m_pInstance;
+	}
 }
 
 void LaiEngine::Camera::Update()

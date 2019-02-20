@@ -12,7 +12,6 @@ namespace sf
 namespace LaiEngine
 {
 	class SceneManager;
-	class MainRenderer; 
 
 	class IGameScene
 	{
@@ -25,9 +24,8 @@ namespace LaiEngine
 		virtual void Update(float dt) = 0;
 		virtual void Release() = 0;
 		
-		virtual void SubmitDataToBeRendered(MainRenderer* renderer) = 0;
-
-		virtual void HandleInput(sf::RenderWindow* window) = 0;
+		virtual void Draw(sf::RenderWindow* window) = 0;
+		virtual void InputProcess(sf::RenderWindow* window) = 0;
 
 	protected:
 		SceneManager*	m_pSceneManager;

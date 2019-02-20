@@ -42,13 +42,10 @@ void LaiEngine::BasicTexture::Release()
 
 std::vector<glm::vec2> LaiEngine::BasicTexture::GetTextureCord(const glm::ivec2 & cord)
 {
-	//{1, 4}
-
 	const float xmin = cord.x * 0.2f; 
 	const float ymin = cord.y * 0.2f;
 	const float xmax = xmin + 0.2f;
 	const float ymax = ymin + 0.2f;
-
 
 	return { {xmin, ymin}, {xmin, ymax}, {xmax, ymax}, {xmax, ymin}, {xmin, ymin}, {xmax, ymax} };
 }
