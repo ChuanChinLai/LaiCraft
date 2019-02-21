@@ -6,24 +6,24 @@
 
 
 
-LaiEngine::LaiCraftGame* LaiEngine::LaiCraftGame::m_pInstance = nullptr;
+LaiEngine::LaiCraftGame* LaiEngine::LaiCraftGame::m_sInstance = nullptr;
 
 LaiEngine::LaiCraftGame* LaiEngine::LaiCraftGame::Instance()
 {
-	if (m_pInstance == nullptr)
+	if (m_sInstance == nullptr)
 	{
-		m_pInstance = new LaiCraftGame();
+		m_sInstance = new LaiCraftGame();
 	}
 
-	return m_pInstance;
+	return m_sInstance;
 }
 
 void LaiEngine::LaiCraftGame::Delete()
 {
-	if (m_pInstance != nullptr)
+	if (m_sInstance != nullptr)
 	{
-		delete m_pInstance;
-		m_pInstance = nullptr;
+		delete m_sInstance;
+		m_sInstance = nullptr;
 	}
 }
 

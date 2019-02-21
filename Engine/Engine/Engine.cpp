@@ -1,15 +1,16 @@
 #include "Engine.h"
 
+#include <Engine/Font/Font.h>
+#include <Engine/GameObject/Camera.h>
 #include <Engine/Scene/SceneManager.h>
 
 #include <SFML/Graphics.hpp>
 #include <glad/glad.h>
 #include <iostream>
 
-LaiEngine::Engine::Engine(const std::string title) : m_pRenderWindow(nullptr), m_pSceneManager(nullptr)
+LaiEngine::Engine::Engine(const std::string title)
 {
 	m_pRenderWindow = new sf::RenderWindow();
-
 	m_pSceneManager = new SceneManager();
 
 	try
@@ -28,6 +29,9 @@ LaiEngine::Engine::Engine(const std::string title) : m_pRenderWindow(nullptr), m
 
 LaiEngine::Engine::~Engine()
 {
+	Font::Instance()->Delete();
+	Camera::Instance()->Delete();
+
 	if (m_pSceneManager != nullptr)
 	{
 		delete m_pSceneManager;

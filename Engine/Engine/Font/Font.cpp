@@ -5,9 +5,34 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 
+LaiEngine::Font* LaiEngine::Font::s_pInstance = nullptr;
+
+LaiEngine::Font * LaiEngine::Font::Instance()
+{
+	if (s_pInstance == nullptr)
+	{
+		s_pInstance = new Font;
+	}
+
+	return s_pInstance;
+}
+
+void LaiEngine::Font::Delete()
+{
+	if (s_pInstance != nullptr)
+	{
+		delete s_pInstance;
+	}
+}
+
 LaiEngine::Font::Font(const std::string& ttfFile)
 {
 	Init(ttfFile);
+}
+
+LaiEngine::Font::~Font()
+{
+	Release();
 }
 
 void LaiEngine::Font::Init(const std::string& ttfFile)
@@ -255,17 +280,22 @@ void LaiEngine::Font::ReleaseTexture()
 {
 	try
 	{
-		if (m_textureId != 0)
+		for (auto& pair : m_characters)
 		{
-			constexpr GLsizei bufferCount = 1;
-			glDeleteTextures(bufferCount, &m_textureId);
+			auto& id = pair.second.TextureID;
 
-			const auto errorCode = glGetError();
-			if (errorCode != GL_NO_ERROR)
+			if (id != 0)
 			{
-				throw std::runtime_error("OpenGL failed to delete the texture");
+				constexpr GLsizei bufferCount = 1;
+				glDeleteTextures(bufferCount, &id);
+
+				const auto errorCode = glGetError();
+				if (errorCode != GL_NO_ERROR)
+				{
+					throw std::runtime_error("OpenGL failed to delete the texture");
+				}
+				id = 0;
 			}
-			m_textureId = 0;
 		}
 	}
 	catch (std::runtime_error& error)

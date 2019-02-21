@@ -27,14 +27,19 @@ namespace LaiEngine
 	class Font : public NonCopyable
 	{
 	public:
-		Font(const std::string& ttfFile = "Assets/Fonts/rs.ttf");
 
-		void Init(const std::string& ttfFile);
-		void Release();
+		static Font* Instance();
+		static void Delete();
 
 		void Draw(const std::string& text, GLfloat x, GLfloat y, GLfloat scale, const glm::vec3& color);
 
 	private:
+
+		Font(const std::string& ttfFile = "Assets/Fonts/rs.ttf");
+		~Font();
+
+		void Init(const std::string& ttfFile);
+		void Release();
 
 		void CreateVAO();
 		void CreateVBO();
@@ -46,7 +51,6 @@ namespace LaiEngine
 		void Load(const GLubyte& c);
 		void BindVAO() const;
 
-
 		std::map<GLchar, Character> m_characters;
 		FT_Library m_ft;
 		FT_Face    m_face;
@@ -55,5 +59,7 @@ namespace LaiEngine
 		GLuint m_vertexArrayId  = 0;
 		GLuint m_vertexBufferId = 0;
 		GLuint m_textureId      = 0;
+
+		static Font* s_pInstance;
 	};
 }

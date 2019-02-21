@@ -2,20 +2,18 @@
 
 #include <Engine/Utility/NonCopyable.h>
 
-#include <Engine/Font/Font.h>
+#include <string>
 
 namespace LaiEngine
 {
+	class Font;
 	class LaiCraftGame;
 
 	class IUserInterface : public NonCopyable
 	{
 	public:
 
-		IUserInterface(LaiCraftGame* pGameInstance) : m_pGameInstance(pGameInstance)
-		{
-
-		}
+		IUserInterface(LaiCraftGame* pGameInstance);
 
 		virtual ~IUserInterface() = default;
 
@@ -28,7 +26,8 @@ namespace LaiEngine
 	protected:
 
 		LaiCraftGame* m_pGameInstance;
-		std::string m_text;
-		Font m_font;
+		std::string   m_text;
+
+		Font* m_pFont = nullptr;
 	};
 }

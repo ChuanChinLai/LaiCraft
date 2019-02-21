@@ -24,7 +24,7 @@ namespace LaiEngine
 
 		Camera();
 
-		static Camera* m_pInstance;
+		static Camera* s_pInstance;
 
 		const GameObject* m_pGameObject;
 

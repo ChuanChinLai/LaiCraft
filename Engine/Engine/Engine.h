@@ -37,8 +37,8 @@ namespace LaiEngine
 
 		virtual bool InitGL(std::string title);
 		
-		sf::RenderWindow*        m_pRenderWindow;
-		LaiEngine::SceneManager* m_pSceneManager;
+		sf::RenderWindow*        m_pRenderWindow = nullptr;
+		LaiEngine::SceneManager* m_pSceneManager = nullptr;
 
 	};
 }

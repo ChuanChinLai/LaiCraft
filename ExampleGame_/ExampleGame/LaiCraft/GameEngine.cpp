@@ -71,16 +71,13 @@ void LaiEngine::GameEngine::GameLoop()
 
 		timer.Update();
 	}
+
+	int a = 1 + 5;
 }
 
 void LaiEngine::GameEngine::Release()
 {
-	//if (m_pRenderer != nullptr)
-	//{
-	//	delete m_pRenderer;
-	//}
-
-	//Camera::Release();
+	int a = 0;
 }
 
 void LaiEngine::GameEngine::HandleEvents()

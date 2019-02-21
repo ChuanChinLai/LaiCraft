@@ -10,7 +10,6 @@ LaiEngine::GamingScene::GamingScene(SceneManager * pSceneManager) : IGameScene(p
 
 LaiEngine::GamingScene::~GamingScene()
 {
-	Camera::Instance()->Delete();
 	LaiCraftGame::Instance()->Delete();
 }
 

@@ -24,7 +24,7 @@ namespace LaiEngine
 
 		LaiCraftGame() = default;
 
-		static LaiCraftGame* m_pInstance;
+		static LaiCraftGame* m_sInstance;
 
 		RenderingSystem* m_pRenderingSystem = nullptr;
 		TestUI* m_pTestUI = nullptr;

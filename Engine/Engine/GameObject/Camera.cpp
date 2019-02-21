@@ -4,7 +4,7 @@
 
 #include <memory>
 
-LaiEngine::Camera* LaiEngine::Camera::m_pInstance = nullptr;
+LaiEngine::Camera* LaiEngine::Camera::s_pInstance = nullptr;
 
 LaiEngine::Camera::Camera() : m_pGameObject(nullptr)
 {
@@ -13,19 +13,19 @@ LaiEngine::Camera::Camera() : m_pGameObject(nullptr)
 
 LaiEngine::Camera * LaiEngine::Camera::Instance()
 {
-	if (m_pInstance == nullptr)
+	if (s_pInstance == nullptr)
 	{
-		m_pInstance = new Camera;
+		s_pInstance = new Camera;
 	}
 
-	return m_pInstance;
+	return s_pInstance;
 }
 
 void LaiEngine::Camera::Delete()
 {
-	if (m_pInstance != nullptr)
+	if (s_pInstance != nullptr)
 	{
-		delete m_pInstance;
+		delete s_pInstance;
 	}
 }
 
