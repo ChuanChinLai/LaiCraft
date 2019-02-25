@@ -103,7 +103,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>
@@ -209,25 +209,39 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseClass\IUserInterface.cpp" />
+    <ClCompile Include="CharacterSystem\CharacterSystem.cpp" />
+    <ClCompile Include="CharacterSystem\Character.cpp" />
     <ClCompile Include="LaiCraft\GameEngine.cpp" />
     <ClCompile Include="LaiCraft\LaiCraftGame.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Renderer\QuadRenderer.cpp" />
-    <ClCompile Include="Renderer\RenderingSystem.cpp" />
-    <ClCompile Include="Renderer\SkyboxRenderer.cpp" />
+    <ClCompile Include="RenderingSystem\BlockRenderer.cpp" />
+    <ClCompile Include="RenderingSystem\QuadRenderer.cpp" />
+    <ClCompile Include="RenderingSystem\RenderingSystem.cpp" />
+    <ClCompile Include="RenderingSystem\SkyboxRenderer.cpp" />
     <ClCompile Include="Scene\GamingScene.cpp" />
     <ClCompile Include="UI\TestUI.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockType\DirtBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockType\IBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\WorldMapSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseClass\IGameSystem.h" />
     <ClInclude Include="BaseClass\IUserInterface.h" />
+    <ClInclude Include="CharacterSystem\CharacterSystem.h" />
+    <ClInclude Include="CharacterSystem\Character.h" />
     <ClInclude Include="LaiCraft\GameEngine.h" />
     <ClInclude Include="LaiCraft\LaiCraftGame.h" />
-    <ClInclude Include="Renderer\QuadRenderer.h" />
-    <ClInclude Include="Renderer\RenderingSystem.h" />
-    <ClInclude Include="Renderer\SkyboxRenderer.h" />
+    <ClInclude Include="RenderingSystem\BlockRenderer.h" />
+    <ClInclude Include="RenderingSystem\QuadRenderer.h" />
+    <ClInclude Include="RenderingSystem\RenderingSystem.h" />
+    <ClInclude Include="RenderingSystem\SkyboxRenderer.h" />
     <ClInclude Include="Scene\GamingScene.h" />
     <ClInclude Include="UI\TestUI.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockType\BlockType.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockType\DirtBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockType\IBlock.h" />
+    <ClInclude Include="WorldMapSystem\WorldConstants.h" />
+    <ClInclude Include="WorldMapSystem\WorldMapSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

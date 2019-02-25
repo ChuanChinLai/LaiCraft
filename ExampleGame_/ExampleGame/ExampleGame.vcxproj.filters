@@ -14,11 +14,23 @@
     <Filter Include="BaseClass">
       <UniqueIdentifier>{fc56b782-4129-41ce-817a-15b361043d31}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Renderer">
-      <UniqueIdentifier>{d60f9fbf-6400-45c5-b867-abcd17bcfe30}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{865da053-9eb7-47d5-b816-074a5216efe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderingSystem">
+      <UniqueIdentifier>{d60f9fbf-6400-45c5-b867-abcd17bcfe30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CharacterSystem">
+      <UniqueIdentifier>{75313ad2-8c20-4fbb-ab16-317feda1f5f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem">
+      <UniqueIdentifier>{93d12fba-8a25-45ba-aa44-9adf5842e62b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\Block">
+      <UniqueIdentifier>{73f2f324-711d-4f13-b4ff-d128bc5298d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\Block\BlockType">
+      <UniqueIdentifier>{40dd252c-314f-4423-9b71-11c06499a1df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,20 +46,38 @@
     <ClCompile Include="LaiCraft\LaiCraftGame.cpp">
       <Filter>LaiCraft</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer\RenderingSystem.cpp">
-      <Filter>Renderer</Filter>
-    </ClCompile>
     <ClCompile Include="UI\TestUI.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer\SkyboxRenderer.cpp">
-      <Filter>Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer\QuadRenderer.cpp">
-      <Filter>Renderer</Filter>
-    </ClCompile>
     <ClCompile Include="BaseClass\IUserInterface.cpp">
       <Filter>BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingSystem\QuadRenderer.cpp">
+      <Filter>RenderingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingSystem\RenderingSystem.cpp">
+      <Filter>RenderingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingSystem\SkyboxRenderer.cpp">
+      <Filter>RenderingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSystem\CharacterSystem.cpp">
+      <Filter>CharacterSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSystem\Character.cpp">
+      <Filter>CharacterSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingSystem\BlockRenderer.cpp">
+      <Filter>RenderingSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockType\DirtBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockType</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockType\IBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockType</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\WorldMapSystem.cpp">
+      <Filter>WorldMapSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,9 +90,6 @@
     <ClInclude Include="LaiCraft\LaiCraftGame.h">
       <Filter>LaiCraft</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer\RenderingSystem.h">
-      <Filter>Renderer</Filter>
-    </ClInclude>
     <ClInclude Include="BaseClass\IGameSystem.h">
       <Filter>BaseClass</Filter>
     </ClInclude>
@@ -72,11 +99,38 @@
     <ClInclude Include="UI\TestUI.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer\SkyboxRenderer.h">
-      <Filter>Renderer</Filter>
+    <ClInclude Include="RenderingSystem\QuadRenderer.h">
+      <Filter>RenderingSystem</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer\QuadRenderer.h">
-      <Filter>Renderer</Filter>
+    <ClInclude Include="RenderingSystem\RenderingSystem.h">
+      <Filter>RenderingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderingSystem\SkyboxRenderer.h">
+      <Filter>RenderingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSystem\CharacterSystem.h">
+      <Filter>CharacterSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSystem\Character.h">
+      <Filter>CharacterSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\WorldConstants.h">
+      <Filter>WorldMapSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderingSystem\BlockRenderer.h">
+      <Filter>RenderingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockType\BlockType.h">
+      <Filter>WorldMapSystem\Block\BlockType</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockType\DirtBlock.h">
+      <Filter>WorldMapSystem\Block\BlockType</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockType\IBlock.h">
+      <Filter>WorldMapSystem\Block\BlockType</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\WorldMapSystem.h">
+      <Filter>WorldMapSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

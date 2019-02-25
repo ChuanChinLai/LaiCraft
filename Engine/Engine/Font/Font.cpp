@@ -93,7 +93,7 @@ void LaiEngine::Font::Draw(const std::string& text, GLfloat x, GLfloat y, GLfloa
 	std::string::const_iterator c;
 	for (c = text.begin(); c != text.end(); c++)
 	{
-		Character ch = m_characters[*c];
+		const Laichar& ch = m_characters[*c];
 
 		GLfloat xpos = x + ch.Bearing.x * scale;
 		GLfloat ypos = y - (ch.Size.y - ch.Bearing.y) * scale;
@@ -333,7 +333,7 @@ void LaiEngine::Font::Load(const GLubyte& c)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	// Now store character for later use
-	Character character = 
+	Laichar character =
 	{
 		glm::ivec2(m_face->glyph->bitmap.width, m_face->glyph->bitmap.rows),
 		glm::ivec2(m_face->glyph->bitmap_left, m_face->glyph->bitmap_top),
@@ -341,7 +341,7 @@ void LaiEngine::Font::Load(const GLubyte& c)
 		m_textureId
 	};
 
-	m_characters.insert(std::pair<GLchar, Character>(c, character));
+	m_characters.insert(std::pair<GLchar, Laichar>(c, character));
 }
 
 void LaiEngine::Font::BindVAO() const

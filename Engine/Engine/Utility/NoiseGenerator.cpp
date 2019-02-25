@@ -1,6 +1,6 @@
 #include "NoiseGenerator.h"
 
-#include <ExampleGame_/ExampleGame/World/WorldConstants.h>
+#include <ExampleGame_/ExampleGame/WorldMapSystem/WorldConstants.h>
 
 #include <cmath>
 

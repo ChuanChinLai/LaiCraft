@@ -62,6 +62,7 @@ void LaiEngine::GamingScene::Draw(sf::RenderWindow* window)
 
 void LaiEngine::GamingScene::InputProcess(sf::RenderWindow* window)
 {
+	LaiCraftGame::Instance()->InputProcess(window);
 	//if (window != nullptr)
 	//{
 	//	m_player->HandleInput(window);

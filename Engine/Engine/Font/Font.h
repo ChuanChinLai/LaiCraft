@@ -16,7 +16,7 @@
 
 namespace LaiEngine
 {
-	struct Character 
+	struct Laichar 
 	{
 		glm::ivec2 Size;    // Size of glyph
 		glm::ivec2 Bearing;  // Offset from baseline to left/top of glyph
@@ -51,7 +51,7 @@ namespace LaiEngine
 		void Load(const GLubyte& c);
 		void BindVAO() const;
 
-		std::map<GLchar, Character> m_characters;
+		std::map<GLchar, Laichar> m_characters;
 		FT_Library m_ft;
 		FT_Face    m_face;
 		FontShader m_shader;

@@ -3,6 +3,7 @@
 #include <Engine/Utility/NonCopyable.h>
 
 #include <string>
+#include <thread>
 
 namespace LaiEngine
 {
@@ -22,6 +23,8 @@ namespace LaiEngine
 		virtual void Release() = 0;
 
 		virtual void Draw();
+
+		virtual std::thread UpdateWithThread() = 0;
 
 	protected:
 

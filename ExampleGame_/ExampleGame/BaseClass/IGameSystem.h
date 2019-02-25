@@ -2,6 +2,8 @@
 
 #include <Engine/Utility/NonCopyable.h>
 
+#include <thread>
+
 namespace LaiEngine
 {
 	class LaiCraftGame;
@@ -20,6 +22,8 @@ namespace LaiEngine
 		virtual void Init()    = 0;
 		virtual void Update()  = 0;
 		virtual void Release() = 0;
+
+		virtual std::thread UpdateWithThread() = 0;
 
 	protected:
 

@@ -11,7 +11,7 @@ void LaiEngine::Timer::Update()
 
 	if (m_timer.getElapsedTime().asSeconds() >= 1.0f)
 	{
-		std::cout << "FPS: " << s_frameCount << std::endl;
+		//std::cout << "FPS: " << s_frameCount << std::endl;
 		s_frameCount = 0;
 		m_timer.restart();
 	}

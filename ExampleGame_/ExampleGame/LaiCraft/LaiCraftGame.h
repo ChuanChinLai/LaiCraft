@@ -2,8 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <thread>
+#include <vector>
+
 namespace LaiEngine
 {
+	class CharacterSystem;
 	class RenderingSystem;
 	class TestUI;
 
@@ -19,15 +23,25 @@ namespace LaiEngine
 		void Release();
 
 		void Draw(sf::RenderWindow* window);
+		void InputProcess(sf::RenderWindow* window);
 
-	private:
+	protected:
 
 		LaiCraftGame() = default;
 
 		static LaiCraftGame* m_sInstance;
 
 		RenderingSystem* m_pRenderingSystem = nullptr;
+		CharacterSystem* m_pCharacterSystem = nullptr;
+
 		TestUI* m_pTestUI = nullptr;
 
+		std::vector<std::thread> m_threads;
+	};
+
+
+	class LaiCraftGameTest : public LaiCraftGame
+	{
+		void Init();
 	};
 }

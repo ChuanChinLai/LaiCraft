@@ -71,13 +71,11 @@ void LaiEngine::GameEngine::GameLoop()
 
 		timer.Update();
 	}
-
-	int a = 1 + 5;
 }
 
 void LaiEngine::GameEngine::Release()
 {
-	int a = 0;
+
 }
 
 void LaiEngine::GameEngine::HandleEvents()

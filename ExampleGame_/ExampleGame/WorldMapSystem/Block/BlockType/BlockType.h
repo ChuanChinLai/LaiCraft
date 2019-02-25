@@ -8,17 +8,17 @@ namespace LaiEngine
 {
 	enum class BlockType : Block_t
 	{
-		Air = 0,
+		AIR = 0,
 
-		Cactus,
-		Dirt,
-		Grass,
-		Gravel,
-		Leaf,
-		Sand,
-		Trunk,
+		CACTUS,
+		DIRT,
+		GRASS,
+		GRAVEL,
+		LEAF,
+		SAND,
+		TRUNK,
 
-		Water,
+		WATER,
 		NUM_TYPES
 	};
 }
