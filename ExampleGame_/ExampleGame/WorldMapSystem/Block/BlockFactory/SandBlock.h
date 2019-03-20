@@ -1,15 +1,14 @@
 #pragma once
 
-#include "IBlock.h"
+#include "../IBlock.h"
 
 namespace LaiEngine
 {
-	class GrassBlock : public IBlock 
+	class SandBlock : public IBlock
 	{
 	public:
 
-		GrassBlock();
-
+		SandBlock();
 
 	protected:
 

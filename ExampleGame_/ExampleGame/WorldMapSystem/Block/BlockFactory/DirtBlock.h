@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IBlock.h"
+#include "../IBlock.h"
 
 namespace LaiEngine
 {

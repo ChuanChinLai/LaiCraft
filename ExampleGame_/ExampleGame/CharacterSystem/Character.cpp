@@ -18,10 +18,10 @@ LaiEngine::Character::Character() : m_rigidbody(this)
 
 	//m_rigidbody.SetUseGravity(true);
 
-	position = { 0, 0, 10 };
+	position = { 0, 5, 10 };
 }
 
-void LaiEngine::Character::Update(World * world, float dt)
+void LaiEngine::Character::Update(float dt)
 {
 
 	//m_rigidbody.Update(dt);

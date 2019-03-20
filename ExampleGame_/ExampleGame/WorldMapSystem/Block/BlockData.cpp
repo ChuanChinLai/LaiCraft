@@ -1,14 +1,13 @@
 #include "BlockData.h"
-#include "BlockDatabase.h"
 
 #include <Engine/GameObject/GameObject.h>
-#include <ExampleGame/World/Block/IBlock.h>
+#include <ExampleGame/WorldMapSystem/Block/BlockFactory/BlockFactory.h>
+#include <ExampleGame/WorldMapSystem/Block/IBlock.h>
 
-LaiEngine::BlockData::BlockData() : m_pBlock(nullptr)
+LaiEngine::BlockData::BlockData()
 {
 
 }
-
 
 LaiEngine::BlockData::~BlockData()
 {
@@ -25,9 +24,9 @@ void LaiEngine::BlockData::SetPosition(const glm::vec3 & position)
 	m_GameObject.position = position;
 }
 
-void LaiEngine::BlockData::SetBlock(const BlockType type)
+void LaiEngine::BlockData::SetBlock(const BlockType & type)
 {
-	m_pBlock = BlockDatabase::GetBlock(type);
+	m_pBlock = BlockFactory::Instance()->Get(type);
 }
 
 bool LaiEngine::BlockData::IsCollidable() const

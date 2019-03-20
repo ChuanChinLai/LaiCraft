@@ -19,10 +19,10 @@ namespace LaiEngine
 		~RenderingSystem();
 
 		virtual void Init()	override;
-		virtual void Update() override;
+		virtual void Update(float dt) override;
 		virtual void Release() override;
 
-		std::thread UpdateWithThread() override;
+		std::thread UpdateWithThread(float dt) override;
 
 		void Draw(IBlock* block);
 		void Draw(); 
@@ -30,7 +30,6 @@ namespace LaiEngine
 	private:
 
 		BlockRenderer  m_blockRenderer;
-		QuadRenderer   m_quadRenderer; 
 		//SkyboxRenderer m_skyboxRenderer;
 	};
 }

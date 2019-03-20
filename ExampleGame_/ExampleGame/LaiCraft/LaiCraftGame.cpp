@@ -2,6 +2,7 @@
 
 #include <ExampleGame/CharacterSystem/CharacterSystem.h>
 #include <ExampleGame/RenderingSystem/RenderingSystem.h>
+#include <ExampleGame/WorldMapSystem/WorldMapSystem.h>
 
 #include <ExampleGame/UI/TestUI.h>
 
@@ -9,39 +10,42 @@
 #include <iostream>
 #include <thread>
 
-LaiEngine::LaiCraftGame* LaiEngine::LaiCraftGame::m_sInstance = nullptr;
+LaiEngine::LaiCraftGame* LaiEngine::LaiCraftGame::s_pInstance = nullptr;
 
 LaiEngine::LaiCraftGame* LaiEngine::LaiCraftGame::Instance()
 {
-	if (m_sInstance == nullptr)
+	if (s_pInstance == nullptr)
 	{
-		m_sInstance = new LaiCraftGame();
+		s_pInstance = new LaiCraftGame();
 	}
 
-	return m_sInstance;
+	return s_pInstance;
 }
 
 void LaiEngine::LaiCraftGame::Delete()
 {
-	if (m_sInstance != nullptr)
+	if (s_pInstance != nullptr)
 	{
-		delete m_sInstance;
-		m_sInstance = nullptr;
+		delete s_pInstance;
+		s_pInstance = nullptr;
 	}
 }
 
 void LaiEngine::LaiCraftGame::Init()
 {
-	m_pRenderingSystem = new RenderingSystem(this);
 	m_pCharacterSystem = new CharacterSystem(this);
+	m_pRenderingSystem = new RenderingSystem(this);
+	m_pWorldMapSystem = new WorldMapSystem(this);
 
 	m_pTestUI = new TestUI(this);
 }
 
-void LaiEngine::LaiCraftGame::Update()
+void LaiEngine::LaiCraftGame::Update(float dt)
 {
-	m_pRenderingSystem->Update();
-	m_pCharacterSystem->Update();
+	m_pCharacterSystem->Update(dt);
+
+	m_pWorldMapSystem->Update(dt);
+	m_pRenderingSystem->Update(dt);
 
 	m_pTestUI->Update();
 
@@ -66,6 +70,11 @@ void LaiEngine::LaiCraftGame::Release()
 		delete m_pRenderingSystem;
 	}
 
+	if (m_pWorldMapSystem != nullptr)
+	{
+		delete m_pWorldMapSystem;
+	}
+
 	if (m_pCharacterSystem != nullptr)
 	{
 		delete m_pCharacterSystem;
@@ -80,7 +89,7 @@ void LaiEngine::LaiCraftGame::Release()
 void LaiEngine::LaiCraftGame::Draw(sf::RenderWindow * window)
 {
 	m_pRenderingSystem->Draw();
-
+	m_pWorldMapSystem->Draw();
 	m_pTestUI->Draw();
 }
 
@@ -89,8 +98,10 @@ void LaiEngine::LaiCraftGame::InputProcess(sf::RenderWindow * window)
 	m_pCharacterSystem->InputProcess(window);
 }
 
-void LaiEngine::LaiCraftGameTest::Init()
+void LaiEngine::LaiCraftGame::Draw(IBlock * block)
 {
-	m_pRenderingSystem = new RenderingSystem(this);
-	m_pCharacterSystem = new CharacterSystem(this);
+	if (m_pRenderingSystem != nullptr)
+	{
+		m_pRenderingSystem->Draw(block);
+	}
 }

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <ExampleGame/BaseClass/IUserInterface.h>
-
 #include <SFML/Graphics.hpp>
 
 namespace LaiEngine

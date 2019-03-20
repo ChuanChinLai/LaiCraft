@@ -139,9 +139,6 @@
     <ClInclude Include="Model\Model.h">
       <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="Texture\BasicTexture.h">
-      <Filter>Texture</Filter>
-    </ClInclude>
     <ClInclude Include="Shader\BasicShader.h">
       <Filter>Shader</Filter>
     </ClInclude>
@@ -196,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="Shader\FontShader.h">
       <Filter>Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\BasicTexture.h">
+      <Filter>Texture</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

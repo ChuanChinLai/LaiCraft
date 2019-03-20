@@ -6,6 +6,7 @@ namespace LaiEngine
 {
 	class LaiCraftGame;
 	class IBlock;
+	class World;
 
 	class WorldMapSystem : public IGameSystem
 	{
@@ -15,15 +16,16 @@ namespace LaiEngine
 		~WorldMapSystem();
 
 		virtual void Init()	override;
-		virtual void Update() override;
+		virtual void Update(float dt) override;
 		virtual void Release() override;
 
-		std::thread UpdateWithThread() override;
+		std::thread UpdateWithThread(float dt) override;
 
-		void Draw(IBlock* block);
 		void Draw();
 
 	private:
+
+		World* m_pWorld = nullptr;
 
 	};
 }

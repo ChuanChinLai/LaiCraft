@@ -15,14 +15,12 @@ namespace LaiEngine
 	public:
 		Character();
 
-		void Update(World* world, float dt);
+		void Update(float dt);
 		void HandleInput(sf::RenderWindow* window);
 
 	private:
 		void KeyboardInput();
 		void MouseInput(sf::RenderWindow* window);
-
-		void ItemInput();
 
 		Physics::Rigidbody m_rigidbody;
 

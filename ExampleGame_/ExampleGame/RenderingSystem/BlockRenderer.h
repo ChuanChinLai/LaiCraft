@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Engine/Shader/BasicShader.h>
-
+#include <Engine/Texture/basictexture.h>
 namespace LaiEngine
 {
 	class IBlock; 
@@ -10,10 +10,13 @@ namespace LaiEngine
 	{
 	public:
 
+		BlockRenderer();
+
 		void Draw(IBlock* block);
 
 	private:
 
-		BasicShader m_shader;
+		BasicShader  m_shader;
+		BasicTexture m_texture;
 	};
 }

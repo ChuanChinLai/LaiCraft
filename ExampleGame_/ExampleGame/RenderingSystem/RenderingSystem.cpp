@@ -15,7 +15,7 @@ void LaiEngine::RenderingSystem::Init()
 
 }
 
-void LaiEngine::RenderingSystem::Update()
+void LaiEngine::RenderingSystem::Update(float dt)
 {
 	//std::this_thread::sleep_for(std::chrono::duration<int, std::milli>(1000));
 	//std::cout << "RenderingSystem Update" << std::endl;
@@ -26,9 +26,10 @@ void LaiEngine::RenderingSystem::Release()
 
 }
 
-std::thread LaiEngine::RenderingSystem::UpdateWithThread()
+std::thread LaiEngine::RenderingSystem::UpdateWithThread(float dt)
 {
-	return std::thread(&RenderingSystem::Update, this);
+	//return std::thread();
+	return std::thread([=] { Update(dt);});
 }
 
 void LaiEngine::RenderingSystem::Draw(IBlock * block)
@@ -38,6 +39,5 @@ void LaiEngine::RenderingSystem::Draw(IBlock * block)
 
 void LaiEngine::RenderingSystem::Draw()
 {
-	m_quadRenderer.Draw();
 //	m_skyboxRenderer.Draw();
 }

@@ -1,17 +1,18 @@
 #pragma once
 
-#include "IBlock.h"
+#include "../IBlock.h"
 
 namespace LaiEngine
 {
-	class TrunkBlock : public IBlock
+	class GravelBlock : public IBlock
 	{
 	public:
 
-		TrunkBlock();
+		GravelBlock();
 
 	protected:
 
 		void LoadFromLuaFile(std::string file) override;
+
 	};
 }

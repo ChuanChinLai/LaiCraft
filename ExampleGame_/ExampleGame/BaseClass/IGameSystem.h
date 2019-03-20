@@ -17,13 +17,16 @@ namespace LaiEngine
 
 		}
 
-		virtual ~IGameSystem() = default;
+		virtual ~IGameSystem()
+		{
 
-		virtual void Init()    = 0;
-		virtual void Update()  = 0;
-		virtual void Release() = 0;
+		}
 
-		virtual std::thread UpdateWithThread() = 0;
+		virtual void Init()           = 0;
+		virtual void Update(float dt) = 0;
+		virtual void Release()        = 0;
+
+		virtual std::thread UpdateWithThread(float dt) = 0;
 
 	protected:
 

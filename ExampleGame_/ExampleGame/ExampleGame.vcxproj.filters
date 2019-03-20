@@ -11,9 +11,6 @@
     <Filter Include="LaiCraft">
       <UniqueIdentifier>{84e9c7cf-eb73-411e-9942-83c1525412e8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="BaseClass">
-      <UniqueIdentifier>{fc56b782-4129-41ce-817a-15b361043d31}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{865da053-9eb7-47d5-b816-074a5216efe3}</UniqueIdentifier>
     </Filter>
@@ -29,8 +26,23 @@
     <Filter Include="WorldMapSystem\Block">
       <UniqueIdentifier>{73f2f324-711d-4f13-b4ff-d128bc5298d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="WorldMapSystem\Block\BlockType">
+    <Filter Include="WorldMapSystem\Chunk">
+      <UniqueIdentifier>{471bdc94-ab64-4bd9-a63b-44164cce5f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\Block\BlockFactory">
       <UniqueIdentifier>{40dd252c-314f-4423-9b71-11c06499a1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseClass">
+      <UniqueIdentifier>{f07c18ae-e009-4fb4-9b3f-6eaa8401a843}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\World">
+      <UniqueIdentifier>{6e869f2d-09d5-4bb3-9e11-b0c3b8f8f9bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\Generator">
+      <UniqueIdentifier>{a4be4061-671e-4b77-9c1b-de878057fb5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\Generator\Terrain">
+      <UniqueIdentifier>{805deacd-bfb8-4f64-9405-e52146925a26}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,9 +60,6 @@
     </ClCompile>
     <ClCompile Include="UI\TestUI.cpp">
       <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseClass\IUserInterface.cpp">
-      <Filter>BaseClass</Filter>
     </ClCompile>
     <ClCompile Include="RenderingSystem\QuadRenderer.cpp">
       <Filter>RenderingSystem</Filter>
@@ -70,14 +79,65 @@
     <ClCompile Include="RenderingSystem\BlockRenderer.cpp">
       <Filter>RenderingSystem</Filter>
     </ClCompile>
-    <ClCompile Include="WorldMapSystem\Block\BlockType\DirtBlock.cpp">
-      <Filter>WorldMapSystem\Block\BlockType</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldMapSystem\Block\BlockType\IBlock.cpp">
-      <Filter>WorldMapSystem\Block\BlockType</Filter>
-    </ClCompile>
     <ClCompile Include="WorldMapSystem\WorldMapSystem.cpp">
       <Filter>WorldMapSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockData.cpp">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\ChunkBlock.cpp">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\IBlock.cpp">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\BlockFactory.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\DirtBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseClass\IUserInterface.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Chunk\ChunkManager.cpp">
+      <Filter>WorldMapSystem\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Chunk\Chunk.cpp">
+      <Filter>WorldMapSystem\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Chunk\ChunkSection.cpp">
+      <Filter>WorldMapSystem\Chunk</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\World\World.cpp">
+      <Filter>WorldMapSystem\World</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Terrain\TestGenerator.cpp">
+      <Filter>WorldMapSystem\Generator\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\GrassBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Terrain\ClassicWorldGenerator.cpp">
+      <Filter>WorldMapSystem\Generator\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\CactusBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\GravelBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\LeafBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\SandBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\TrunkBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\WaterBlock.cpp">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,12 +149,6 @@
     </ClInclude>
     <ClInclude Include="LaiCraft\LaiCraftGame.h">
       <Filter>LaiCraft</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseClass\IGameSystem.h">
-      <Filter>BaseClass</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseClass\IUserInterface.h">
-      <Filter>BaseClass</Filter>
     </ClInclude>
     <ClInclude Include="UI\TestUI.h">
       <Filter>UI</Filter>
@@ -120,17 +174,74 @@
     <ClInclude Include="RenderingSystem\BlockRenderer.h">
       <Filter>RenderingSystem</Filter>
     </ClInclude>
-    <ClInclude Include="WorldMapSystem\Block\BlockType\BlockType.h">
-      <Filter>WorldMapSystem\Block\BlockType</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldMapSystem\Block\BlockType\DirtBlock.h">
-      <Filter>WorldMapSystem\Block\BlockType</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldMapSystem\Block\BlockType\IBlock.h">
-      <Filter>WorldMapSystem\Block\BlockType</Filter>
-    </ClInclude>
     <ClInclude Include="WorldMapSystem\WorldMapSystem.h">
       <Filter>WorldMapSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockData.h">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\ChunkBlock.h">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\IBlock.h">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\BlockFactory.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\DirtBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClass\IGameSystem.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClass\IUserInterface.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Chunk\ChunkManager.h">
+      <Filter>WorldMapSystem\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Chunk\Chunk.h">
+      <Filter>WorldMapSystem\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Chunk\ChunkSection.h">
+      <Filter>WorldMapSystem\Chunk</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockType.h">
+      <Filter>WorldMapSystem\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\World\World.h">
+      <Filter>WorldMapSystem\World</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Terrain\TerrainGenerator.h">
+      <Filter>WorldMapSystem\Generator\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Terrain\TestGenerator.h">
+      <Filter>WorldMapSystem\Generator\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\GrassBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Terrain\ClassicWorldGenerator.h">
+      <Filter>WorldMapSystem\Generator\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\CactusBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\GravelBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\LeafBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\SandBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\TrunkBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\WaterBlock.h">
+      <Filter>WorldMapSystem\Block\BlockFactory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

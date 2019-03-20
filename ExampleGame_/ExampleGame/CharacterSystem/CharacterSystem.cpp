@@ -1,5 +1,6 @@
 #include "CharacterSystem.h"
 
+#include <Engine/Utility/Timer.h>
 #include <Engine/GameObject/Camera.h>
 
 #include <iostream>
@@ -19,8 +20,10 @@ void LaiEngine::CharacterSystem::Init()
 	Camera::Instance()->SetGameObject(&m_character);
 }
 
-void LaiEngine::CharacterSystem::Update()
+void LaiEngine::CharacterSystem::Update(float dt)
 {
+	m_character.Update(dt);
+
 	Camera::Instance()->Update();
 }
 
@@ -33,7 +36,7 @@ void LaiEngine::CharacterSystem::InputProcess(sf::RenderWindow * window)
 	m_character.HandleInput(window);
 }
 
-std::thread LaiEngine::CharacterSystem::UpdateWithThread()
+std::thread LaiEngine::CharacterSystem::UpdateWithThread(float dt)
 {
 	return std::thread();
 }

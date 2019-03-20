@@ -103,7 +103,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>
@@ -220,9 +220,25 @@
     <ClCompile Include="RenderingSystem\SkyboxRenderer.cpp" />
     <ClCompile Include="Scene\GamingScene.cpp" />
     <ClCompile Include="UI\TestUI.cpp" />
-    <ClCompile Include="WorldMapSystem\Block\BlockType\DirtBlock.cpp" />
-    <ClCompile Include="WorldMapSystem\Block\BlockType\IBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockData.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\BlockFactory.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\CactusBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\DirtBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\GrassBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\GravelBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\LeafBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\SandBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\TrunkBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\BlockFactory\WaterBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\ChunkBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Block\IBlock.cpp" />
+    <ClCompile Include="WorldMapSystem\Chunk\Chunk.cpp" />
+    <ClCompile Include="WorldMapSystem\Chunk\ChunkManager.cpp" />
+    <ClCompile Include="WorldMapSystem\Chunk\ChunkSection.cpp" />
+    <ClCompile Include="WorldMapSystem\Generator\Terrain\ClassicWorldGenerator.cpp" />
+    <ClCompile Include="WorldMapSystem\Generator\Terrain\TestGenerator.cpp" />
     <ClCompile Include="WorldMapSystem\WorldMapSystem.cpp" />
+    <ClCompile Include="WorldMapSystem\World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseClass\IGameSystem.h" />
@@ -237,11 +253,28 @@
     <ClInclude Include="RenderingSystem\SkyboxRenderer.h" />
     <ClInclude Include="Scene\GamingScene.h" />
     <ClInclude Include="UI\TestUI.h" />
-    <ClInclude Include="WorldMapSystem\Block\BlockType\BlockType.h" />
-    <ClInclude Include="WorldMapSystem\Block\BlockType\DirtBlock.h" />
-    <ClInclude Include="WorldMapSystem\Block\BlockType\IBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockData.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\BlockFactory.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\CactusBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\DirtBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\GrassBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\GravelBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\LeafBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\SandBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\TrunkBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockFactory\WaterBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\BlockType.h" />
+    <ClInclude Include="WorldMapSystem\Block\ChunkBlock.h" />
+    <ClInclude Include="WorldMapSystem\Block\IBlock.h" />
+    <ClInclude Include="WorldMapSystem\Chunk\Chunk.h" />
+    <ClInclude Include="WorldMapSystem\Chunk\ChunkManager.h" />
+    <ClInclude Include="WorldMapSystem\Chunk\ChunkSection.h" />
+    <ClInclude Include="WorldMapSystem\Generator\Terrain\ClassicWorldGenerator.h" />
+    <ClInclude Include="WorldMapSystem\Generator\Terrain\TerrainGenerator.h" />
+    <ClInclude Include="WorldMapSystem\Generator\Terrain\TestGenerator.h" />
     <ClInclude Include="WorldMapSystem\WorldConstants.h" />
     <ClInclude Include="WorldMapSystem\WorldMapSystem.h" />
+    <ClInclude Include="WorldMapSystem\World\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

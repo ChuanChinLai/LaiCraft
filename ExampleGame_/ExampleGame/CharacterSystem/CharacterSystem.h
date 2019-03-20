@@ -17,12 +17,12 @@ namespace LaiEngine
 		~CharacterSystem();
 
 		virtual void Init()	override;
-		virtual void Update() override;
+		virtual void Update(float dt) override;
 		virtual void Release() override;
 
 		void InputProcess(sf::RenderWindow* window);
 
-		std::thread UpdateWithThread() override;
+		std::thread UpdateWithThread(float dt) override;
 
 	private:
 

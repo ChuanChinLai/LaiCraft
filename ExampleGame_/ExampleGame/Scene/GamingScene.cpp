@@ -34,7 +34,7 @@ void LaiEngine::GamingScene::Init()
 
 void LaiEngine::GamingScene::Update(float dt)
 {
-	LaiCraftGame::Instance()->Update();
+	LaiCraftGame::Instance()->Update(dt);
 	//m_pWorld->Update();
 	//m_player->Update(m_pWorld, dt);
 	//m_camera->Update();

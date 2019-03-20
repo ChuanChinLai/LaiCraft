@@ -1,9 +1,14 @@
 #include "BlockRenderer.h"
 
 #include <Engine/GameObject/Camera.h>
-#include <ExampleGame/WorldMapSystem/Block/BlockType/IBlock.h>
+#include <ExampleGame/WorldMapSystem/Block/IBlock.h>
 
 #include <vector>
+
+LaiEngine::BlockRenderer::BlockRenderer()
+{
+	m_texture.Init("Assets/Textures/DefaultPack.png");
+}
 
 void LaiEngine::BlockRenderer::Draw(IBlock * block)
 {
@@ -17,5 +22,6 @@ void LaiEngine::BlockRenderer::Draw(IBlock * block)
 	m_shader.SetViewMat(Camera::Instance()->GetViewMatrix());
 	m_shader.SetProjectedMat(Camera::Instance()->GetProjectedMatrix());
 
+	m_texture.Bind();
 	block->Draw();
 }
