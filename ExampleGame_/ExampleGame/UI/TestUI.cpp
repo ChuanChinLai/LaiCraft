@@ -35,9 +35,10 @@ void LaiEngine::TestUI::Release()
 
 void LaiEngine::TestUI::Draw()
 {
-	static glm::vec3 pos = { 0.5, 0.8f, 0.2f };
+	glDisable(GL_CULL_FACE);
 
-	m_pFont->Draw(m_text, 25.0f, 25.0f, 1.0f, pos);
+	static glm::vec3 color = { 0.5f, 0.8f, 0.2f };
+	m_pFont->Draw(m_text, 25.0f, 25.0f, 1.0f, color);
 }
 
 std::thread LaiEngine::TestUI::UpdateWithThread()

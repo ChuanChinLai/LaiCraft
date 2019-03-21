@@ -103,14 +103,13 @@ void LaiEngine::ClassicWorldGenerator::SetBlocks(int maxHeight)
 		}
 	}
 
-	//for (auto& tree : trees)
-	//{
-	//	int x = tree.x;
-	//	int z = tree.z;
+	for (auto& tree : trees)
+	{
+		int x = tree.x;
+		int z = tree.z;
 
-	//	GetBiome(x, z).MakeTree(m_random, m_pChunk, x, tree.y, z);
-	//}
-
+		GetBiome(x, z).MakeTree(m_random, m_pChunk, x, tree.y, z);
+	}
 }
 
 void LaiEngine::ClassicWorldGenerator::GetHeightMap()

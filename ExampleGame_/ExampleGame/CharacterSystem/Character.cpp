@@ -40,11 +40,7 @@ void LaiEngine::Character::Update(World * world, float dt)
 	position.z = position.z < 0.0f ? 0 : position.z;
 	Collide(world, { 0, 0, m_rigidbody.velocity.z }, dt);
 
-	//CollideY(world, m_rigidbody.velocity.y);
-	//CollideXZ(world, m_rigidbody.velocity, dt);
-
-	//m_collider.Update(position);
-
+	m_collider.Update(position);
 
 	m_rigidbody.velocity.x *= 0.95f;
 	m_rigidbody.velocity.x = abs(m_rigidbody.velocity.x) < Math::EPSILON ? 0 : m_rigidbody.velocity.x;

@@ -42,12 +42,15 @@ void LaiEngine::RenderingSystem::Draw(const BlockType& type)
 {
 	IBlock* block = BlockFactory::Get(type);
 
-	if (type != BlockType::WATER)
-	{
-		m_blockRenderer.Draw(block);
-	}
-	else
+	if (type == BlockType::WATER)
 	{
 		m_waterRenderer.Draw(block);
 	}
+	else
+	{
+		m_blockRenderer.Draw(block);
+	}
+
+
+	m_skyboxRenderer.Draw();
 }

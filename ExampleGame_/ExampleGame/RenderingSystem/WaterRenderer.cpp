@@ -6,6 +6,11 @@
 #include <ExampleGame/WorldMapSystem/Block/BlockFactory/BlockFactory.h>
 #include <ExampleGame/WorldMapSystem/Block/IBlock.h>
 
+LaiEngine::WaterRenderer::WaterRenderer()
+{
+	m_texture.Init("Assets/Textures/DefaultPack.png");
+}
+
 void LaiEngine::WaterRenderer::Draw(IBlock * block)
 {
 	glEnable(GL_BLEND);
@@ -21,6 +26,8 @@ void LaiEngine::WaterRenderer::Draw(IBlock * block)
 	m_shader.SetProjectedMat(Camera::Instance()->GetProjectedMatrix());
 
 	m_shader.SetTime(Timer::TimeElapsed());
+
+	m_texture.Bind();
 
 	if (block != nullptr)
 	{

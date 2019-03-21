@@ -50,6 +50,9 @@
     <Filter Include="WorldMapSystem\Generator\Structures">
       <UniqueIdentifier>{5292fe00-df0e-48b4-a53d-ce3006d5cdc8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ItemSystem">
+      <UniqueIdentifier>{85911cd1-47c2-4076-8960-7916c00650e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -66,9 +69,6 @@
     </ClCompile>
     <ClCompile Include="UI\TestUI.cpp">
       <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderingSystem\QuadRenderer.cpp">
-      <Filter>RenderingSystem</Filter>
     </ClCompile>
     <ClCompile Include="RenderingSystem\RenderingSystem.cpp">
       <Filter>RenderingSystem</Filter>
@@ -172,6 +172,18 @@
     <ClCompile Include="RenderingSystem\WaterRenderer.cpp">
       <Filter>RenderingSystem</Filter>
     </ClCompile>
+    <ClCompile Include="ItemSystem\ItemSystem.cpp">
+      <Filter>ItemSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemSystem\ItemStack.cpp">
+      <Filter>ItemSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemSystem\Material.cpp">
+      <Filter>ItemSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ItemUI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\GamingScene.h">
@@ -185,9 +197,6 @@
     </ClInclude>
     <ClInclude Include="UI\TestUI.h">
       <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderingSystem\QuadRenderer.h">
-      <Filter>RenderingSystem</Filter>
     </ClInclude>
     <ClInclude Include="RenderingSystem\RenderingSystem.h">
       <Filter>RenderingSystem</Filter>
@@ -302,6 +311,18 @@
     </ClInclude>
     <ClInclude Include="RenderingSystem\WaterRenderer.h">
       <Filter>RenderingSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSystem\ItemSystem.h">
+      <Filter>ItemSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSystem\ItemStack.h">
+      <Filter>ItemSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSystem\Material.h">
+      <Filter>ItemSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\ItemUI.h">
+      <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,8 @@
 #include <ExampleGame/WorldMapSystem/Block/BlockType.h>
 
 #include <SFML/Graphics.hpp>
+
+#include <string>
 #include <thread>
 #include <vector>
 
@@ -11,7 +13,9 @@ namespace LaiEngine
 	class CharacterSystem;
 	class RenderingSystem;
 	class WorldMapSystem;
+	class ItemSystem;
 
+	class ItemUI;
 	class TestUI;
 
 	class Character;
@@ -37,6 +41,8 @@ namespace LaiEngine
 		Character* GetCharacter();
 		World*     GetWorld();
 
+		std::string GetItemString(const int id);
+
 		void Draw(const BlockType& type);
 
 	protected:
@@ -48,7 +54,9 @@ namespace LaiEngine
 		CharacterSystem* m_pCharacterSystem = nullptr;
 		RenderingSystem* m_pRenderingSystem = nullptr;
 		WorldMapSystem*  m_pWorldMapSystem  = nullptr;
+		ItemSystem*      m_pItemSystem      = nullptr;
 
+		ItemUI* m_pItemUI = nullptr;
 		TestUI* m_pTestUI = nullptr;
 
 		std::vector<std::thread> m_threads;

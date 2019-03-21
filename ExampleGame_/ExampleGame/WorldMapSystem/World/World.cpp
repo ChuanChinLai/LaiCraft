@@ -37,7 +37,7 @@ LaiEngine::World::~World()
 
 void LaiEngine::World::Update()
 {
-	int m_loadDistance = 5;
+	int m_loadDistance = 8;
 
 	int cameraX = static_cast<int>(Camera::Instance()->position.x) / CHUNK_SIZE;
 	int cameraZ = static_cast<int>(Camera::Instance()->position.z) / CHUNK_SIZE;
@@ -61,7 +61,7 @@ void LaiEngine::World::Update()
 
 void LaiEngine::World::Draw()
 {
-	int renderDistance = 5;
+	int renderDistance = 8;
 	int cameraX = static_cast<int>(Camera::Instance()->position.x) / CHUNK_SIZE;
 	int cameraZ = static_cast<int>(Camera::Instance()->position.z) / CHUNK_SIZE;
 

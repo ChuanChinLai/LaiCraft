@@ -6,7 +6,6 @@
 #include "BlockRenderer.h"
 #include "WaterRenderer.h"
 #include "SkyboxRenderer.h"
-#include "QuadRenderer.h"
 
 namespace LaiEngine
 {
@@ -32,6 +31,6 @@ namespace LaiEngine
 		BlockRenderer  m_blockRenderer;
 		WaterRenderer  m_waterRenderer;
 
-		//SkyboxRenderer m_skyboxRenderer;
+		SkyboxRenderer m_skyboxRenderer;
 	};
 }

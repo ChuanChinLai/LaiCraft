@@ -52,8 +52,8 @@ void LaiEngine::SkyboxRenderer::Init()
 
 void LaiEngine::SkyboxRenderer::Draw()
 {
-	//glEnable(GL_CULL_FACE);
-	//glCullFace(GL_FRONT);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_FRONT);
 
 	m_shader.UseProgram();
 	m_shader.SetViewMat(Camera::Instance()->GetViewMatrix());

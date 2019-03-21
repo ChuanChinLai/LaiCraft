@@ -23,7 +23,7 @@ void LaiEngine::WorldMapSystem::Init()
 		m_pWorld = new World(this);
 	}
 
-	//m_pWorld->SetSpawnPoint(m_pGameInstance->GetCharacter());
+	m_pWorld->SetSpawnPoint(*m_pGameInstance->GetCharacter());
 }
 
 void LaiEngine::WorldMapSystem::Update(float dt)
