@@ -61,9 +61,9 @@ LaiEngine::IBlock * LaiEngine::BlockFactory::Get(const BlockType& type)
 		case LaiEngine::BlockType::AIR:
 			return nullptr;
 
-		//case LaiEngine::BlockType::CACTUS:
-		//	blocks[index] = new CactusBlock;
-		//	break;
+		case LaiEngine::BlockType::CACTUS:
+			blocks[index] = new CactusBlock;
+			break;
 
 		case LaiEngine::BlockType::DIRT:
 			blocks[index] = new DirtBlock;
@@ -73,25 +73,25 @@ LaiEngine::IBlock * LaiEngine::BlockFactory::Get(const BlockType& type)
 			blocks[index] = new GrassBlock;
 			break;
 
-		//case LaiEngine::BlockType::GRAVEL:
-		//	blocks[index] = new GravelBlock;
-		//	break;
+		case LaiEngine::BlockType::GRAVEL:
+			blocks[index] = new GravelBlock;
+			break;
 
-		//case LaiEngine::BlockType::LEAF:
-		//	blocks[index] = new LeafBlock;
-		//	break;
+		case LaiEngine::BlockType::LEAF:
+			blocks[index] = new LeafBlock;
+			break;
 
-		//case LaiEngine::BlockType::SAND:
-		//	blocks[index] = new SandBlock;
-		//	break;
+		case LaiEngine::BlockType::SAND:
+			blocks[index] = new SandBlock;
+			break;
 
-		//case LaiEngine::BlockType::TRUNK:
-		//	blocks[index] = new TrunkBlock;
-		//	break;
+		case LaiEngine::BlockType::TRUNK:
+			blocks[index] = new TrunkBlock;
+			break;
 
-		//case LaiEngine::BlockType::WATER:
-		//	blocks[index] = new WaterBlock;
-		//	break;
+		case LaiEngine::BlockType::WATER:
+			blocks[index] = new WaterBlock;
+			break;
 
 		default:
 			break;

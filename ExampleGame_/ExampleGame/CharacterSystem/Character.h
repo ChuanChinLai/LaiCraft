@@ -2,28 +2,41 @@
 
 #include <Engine/GameObject/GameObject.h>
 #include <Engine/Physics/Rigidbody.h>
+#include <Engine/Physics/AABB.h>
 
 #include <glm/vec3.hpp>
 #include <SFML/Graphics.hpp>
 
 namespace LaiEngine
 {
+	class CharacterSystem;
 	class World;
 
 	class Character : public GameObject
 	{
 	public:
-		Character();
+		Character(CharacterSystem* system);
 
-		void Update(float dt);
+		void Update(World * world, float dt);
 		void HandleInput(sf::RenderWindow* window);
 
 	private:
+
 		void KeyboardInput();
 		void MouseInput(sf::RenderWindow* window);
 
-		Physics::Rigidbody m_rigidbody;
+		void Collide(World* world, const glm::vec3& vel, float dt);
 
-		float m_speed     = 0.5f;
+		void Jump();
+
+		Physics::Rigidbody m_rigidbody;
+		AABB               m_collider;
+
+		CharacterSystem*   m_pSystem;
+
+
+		float m_speed      = 0.5f;
+		bool  m_isOnGround = false;
+
 	};
 }

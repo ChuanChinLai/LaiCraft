@@ -83,7 +83,7 @@ bool LaiEngine::Engine::InitGL(const std::string title)
 
 	glViewport(0, 0, m_pRenderWindow->getSize().x, m_pRenderWindow->getSize().y);
 
-	//glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
 
 	return true;
 }

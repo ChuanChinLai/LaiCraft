@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ExampleGame/WorldMapSystem/Block/BlockType.h>
+
 #include <SFML/Graphics.hpp>
 #include <thread>
 #include <vector>
@@ -12,7 +14,9 @@ namespace LaiEngine
 
 	class TestUI;
 
+	class Character;
 	class IBlock;
+	class World;
 
 	class LaiCraftGame
 	{
@@ -30,8 +34,10 @@ namespace LaiEngine
 
 
 		//public functions for IGameSystem:
+		Character* GetCharacter();
+		World*     GetWorld();
 
-		void Draw(IBlock* block);
+		void Draw(const BlockType& type);
 
 	protected:
 

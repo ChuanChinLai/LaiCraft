@@ -25,6 +25,11 @@ int LaiEngine::Timer::FPS()
 	return s_frameCount;
 }
 
+float LaiEngine::Timer::TimeElapsed()
+{
+	return s_timeElapsed;
+}
+
 float LaiEngine::Timer::dt() const
 {
 	return m_time.asSeconds();

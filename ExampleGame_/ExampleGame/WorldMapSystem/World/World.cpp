@@ -1,20 +1,25 @@
 #include "World.h"
 
 #include <Engine/GameObject/Camera.h>
+#include <Engine/Utility/Random.h>
 
+
+#include <ExampleGame/CharacterSystem/Character.h>
 #include <ExampleGame/WorldMapSystem/WorldConstants.h>
 #include <ExampleGame/WorldMapSystem/Block/BlockType.h>
 #include <ExampleGame/WorldMapSystem/Chunk/Chunk.h>
 #include <ExampleGame/WorldMapSystem/Chunk/ChunkManager.h>
 
+#include <ExampleGame/WorldMapSystem/WorldMapSystem.h>
+#include <ExampleGame/WorldMapSystem/Generator/Terrain/TerrainGenerator.h>
 
 
 #include <iostream>
 #include <algorithm>
 
-LaiEngine::World::World() : m_chunkManager(this)
+LaiEngine::World::World(WorldMapSystem* system) : m_pSystem(system), m_chunkManager(this)
 {
-	SetSpawnPoint();
+
 
 	//if (player != nullptr)
 	//{
@@ -65,9 +70,9 @@ void LaiEngine::World::Draw()
 	int maxX = cameraX + renderDistance;
 	int maxZ = cameraZ + renderDistance;
 
-	auto& chunkManager = m_chunkManager.Get();
+	auto& chunkMap = m_chunkManager.Get();
 
-	for (auto itr = chunkManager.begin(); itr != chunkManager.end(); )
+	for (auto itr = chunkMap.begin(); itr != chunkMap.end(); )
 	{
 		auto& chunk = itr->second;
 		auto& location = chunk->GetLocation();
@@ -84,7 +89,7 @@ void LaiEngine::World::Draw()
 				delete chunk;
 			}
 
-			itr = chunkManager.erase(itr);
+			itr = chunkMap.erase(itr);
 			continue;
 		}
 	}
@@ -141,46 +146,48 @@ bool LaiEngine::World::IsValid(const LaiEngine::VectorXZ & chunkPos) const
 	return true;
 }
 
-void LaiEngine::World::SetSpawnPoint()
+void LaiEngine::World::SetSpawnPoint(Character& character)
 {
-	//std::cout << "Searching for spawn...\n";
-	//int attempts = 0;
-	//int chunkX = -1;
-	//int chunkZ = -1;
-	//int blockX = 0;
-	//int blockZ = 0;
-	//int blockY = 0;
+	std::cout << "Searching for spawn...\n";
+	int attempts = 0;
+	int chunkX = -1;
+	int chunkZ = -1;
+	int blockX = 0;
+	int blockZ = 0;
+	int blockY = 0;
 
-	//const auto h = m_chunkManager.GetTerrainGenerator()->GetMinimumSpawnHeight();
+	const auto h = m_chunkManager.GetTerrainGenerator()->GetMinimumSpawnHeight();
 
-	//while (blockY <= h)
-	//{
-	//	m_chunkManager.UnloadChunk(chunkX, chunkZ);
+	while (blockY <= h)
+	{
+		m_chunkManager.Unload(chunkX, chunkZ);
 
-	//	chunkX = RandomSingleton::Get().intInRange(100, 200);
-	//	chunkZ = RandomSingleton::Get().intInRange(100, 200);
-	//	blockX = RandomSingleton::Get().intInRange(0, CHUNK_SIZE - 1);
-	//	blockZ = RandomSingleton::Get().intInRange(0, CHUNK_SIZE - 1);
+		chunkX = RandomSingleton::Get().intInRange(100, 200);
+		chunkZ = RandomSingleton::Get().intInRange(100, 200);
+		blockX = RandomSingleton::Get().intInRange(0, CHUNK_SIZE - 1);
+		blockZ = RandomSingleton::Get().intInRange(0, CHUNK_SIZE - 1);
 
-	//	m_chunkManager.LoadChunk(chunkX, chunkZ);
-	//	blockY = m_chunkManager.GetChunk(chunkX, chunkZ)->GetHeightAt(blockX, blockZ);
-	//	attempts++;
-	//}
+		m_chunkManager.Load(chunkX, chunkZ);
+		blockY = m_chunkManager.GetChunk(chunkX, chunkZ)->GetHeightAt(blockX, blockZ);
+		attempts++;
+	}
 
-	//int worldX = chunkX * CHUNK_SIZE + blockX;
-	//int worldZ = chunkZ * CHUNK_SIZE + blockZ;
+	int worldX = chunkX * CHUNK_SIZE + blockX;
+	int worldZ = chunkZ * CHUNK_SIZE + blockZ;
 
-	//m_playerSpawnPoint = { worldX, blockY, worldZ };
+	m_playerSpawnPoint = { worldX, blockY, worldZ };
 
-	//for (int x = worldX - 1; x <= worldX + 1; ++x)
-	//{
-	//	for (int z = worldZ - 1; z <= worldZ + 1; ++z)
-	//	{
-	//		//std::unique_lock<std::mutex> lock(m_mainMutex);
-	//		m_chunkManager.LoadChunk(x, z);
-	//	}
-	//}
+	for (int x = worldX - 1; x <= worldX + 1; ++x)
+	{
+		for (int z = worldZ - 1; z <= worldZ + 1; ++z)
+		{
+			//std::unique_lock<std::mutex> lock(m_mainMutex);
+			m_chunkManager.Load(x, z);
+		}
+	}
 
-	//std::cout << m_playerSpawnPoint.x << " " << m_playerSpawnPoint.y << " " << m_playerSpawnPoint.z << std::endl;
-	//std::cout << "Spawn found! Attempts: " << attempts << std::endl;
+	character.position = m_playerSpawnPoint;
+
+	std::cout << m_playerSpawnPoint.x << " " << m_playerSpawnPoint.y << " " << m_playerSpawnPoint.z << std::endl;
+	std::cout << "Spawn found! Attempts: " << attempts << std::endl;
 }

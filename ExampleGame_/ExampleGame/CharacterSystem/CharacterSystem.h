@@ -22,10 +22,12 @@ namespace LaiEngine
 
 		void InputProcess(sf::RenderWindow* window);
 
+		Character* GetCharacter();
+
 		std::thread UpdateWithThread(float dt) override;
 
 	private:
 
-		Character m_character;
+		Character* m_pCharacter = nullptr;
 	};
 }

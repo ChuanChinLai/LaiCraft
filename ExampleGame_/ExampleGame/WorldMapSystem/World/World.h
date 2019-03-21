@@ -13,16 +13,17 @@
 
 namespace LaiEngine
 {
-
+	class Character;
 	class ChunkBlock;
 	class Chunk;
 	class Player;
+	class WorldMapSystem;
 
 	class World
 	{
 	public:
 
-		World();
+		World(WorldMapSystem* system);
 		~World();
 
 		void Update();
@@ -34,13 +35,16 @@ namespace LaiEngine
 		static VectorXZ GetBlockXZ(int x, int z);
 		static VectorXZ GetChunkXZ(int x, int z);
 
+		void SetSpawnPoint(Character& character);
+
 	private:
 
 		bool IsValid(const LaiEngine::VectorXZ& chunkPos) const;
-		void SetSpawnPoint();
 
 		ChunkManager        m_chunkManager;
 		glm::vec3           m_playerSpawnPoint;
+
+		WorldMapSystem* m_pSystem;
 	};
 
 }

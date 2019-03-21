@@ -1,6 +1,6 @@
 #include "TemperateForestBiome.h"
 
-#include <ExampleGame/World/Generation/Structures/TreeGenerator.h>
+#include <ExampleGame/WorldMapSystem/Generator/Structures/TreeGenerator.h>
 
 LaiEngine::TemperateForestBiome::TemperateForestBiome(int seed) : Biome(GetNoiseParameters(), 55, 75, seed)
 {
@@ -9,17 +9,17 @@ LaiEngine::TemperateForestBiome::TemperateForestBiome(int seed) : Biome(GetNoise
 
 LaiEngine::BlockType LaiEngine::TemperateForestBiome::GetPlant(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::TemperateForestBiome::GetTopBlock(Rand & rand) const
 {
-	return rand.intInRange(0, 10) < 8 ? BlockType::Grass : BlockType::Dirt;
+	return rand.intInRange(0, 10) < 8 ? BlockType::GRASS : BlockType::DIRT;
 }
 
 LaiEngine::BlockType LaiEngine::TemperateForestBiome::GetUnderWaterBlock(Rand & rand) const
 {
-	return rand.intInRange(0, 10) > 8 ? BlockType::Dirt : BlockType::Sand;
+	return rand.intInRange(0, 10) > 8 ? BlockType::DIRT : BlockType::SAND;
 }
 
 void LaiEngine::TemperateForestBiome::MakeTree(Rand & rand, Chunk * chunk, int x, int y, int z) const

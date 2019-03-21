@@ -1,6 +1,7 @@
 #pragma once
 
-#include <ExampleGame/World/Block/BlockType.h>
+#include <ExampleGame/WorldMapSystem/Block/BlockType.h>
+
 #include <vector>
 
 namespace LaiEngine

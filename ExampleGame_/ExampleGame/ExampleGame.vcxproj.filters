@@ -44,6 +44,12 @@
     <Filter Include="WorldMapSystem\Generator\Terrain">
       <UniqueIdentifier>{805deacd-bfb8-4f64-9405-e52146925a26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="WorldMapSystem\Generator\Biome">
+      <UniqueIdentifier>{f5d42d85-d310-4e2b-8526-d816256e4ef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldMapSystem\Generator\Structures">
+      <UniqueIdentifier>{5292fe00-df0e-48b4-a53d-ce3006d5cdc8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -138,6 +144,33 @@
     </ClCompile>
     <ClCompile Include="WorldMapSystem\Block\BlockFactory\WaterBlock.cpp">
       <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Biome\Biome.cpp">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Biome\DesertBiome.cpp">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Biome\GrasslandBiome.cpp">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Biome\LightForestBiome.cpp">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Biome\OceanBiome.cpp">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Biome\TemperateForestBiome.cpp">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Structures\StructureBuilder.cpp">
+      <Filter>WorldMapSystem\Generator\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldMapSystem\Generator\Structures\TreeGenerator.cpp">
+      <Filter>WorldMapSystem\Generator\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingSystem\WaterRenderer.cpp">
+      <Filter>RenderingSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +275,33 @@
     </ClInclude>
     <ClInclude Include="WorldMapSystem\Block\BlockFactory\WaterBlock.h">
       <Filter>WorldMapSystem\Block\BlockFactory</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Biome\Biome.h">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Biome\DesertBiome.h">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Biome\GrasslandBiome.h">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Biome\LightForestBiome.h">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Biome\OceanBiome.h">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Biome\TemperateForestBiome.h">
+      <Filter>WorldMapSystem\Generator\Biome</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Structures\StructureBuilder.h">
+      <Filter>WorldMapSystem\Generator\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMapSystem\Generator\Structures\TreeGenerator.h">
+      <Filter>WorldMapSystem\Generator\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderingSystem\WaterRenderer.h">
+      <Filter>RenderingSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

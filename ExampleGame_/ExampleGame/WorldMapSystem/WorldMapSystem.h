@@ -1,12 +1,12 @@
 #pragma once
 
 #include <ExampleGame/BaseClass/IGameSystem.h>
+#include <ExampleGame/WorldMapSystem/World/World.h>
 
 namespace LaiEngine
 {
 	class LaiCraftGame;
 	class IBlock;
-	class World;
 
 	class WorldMapSystem : public IGameSystem
 	{
@@ -23,9 +23,10 @@ namespace LaiEngine
 
 		void Draw();
 
+		World* GetWorld();
+
 	private:
 
 		World* m_pWorld = nullptr;
-
 	};
 }

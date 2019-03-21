@@ -1,6 +1,6 @@
 #include "GrasslandBiome.h"
 
-#include <ExampleGame/World/Generation/Structures/TreeGenerator.h>
+#include <ExampleGame/WorldMapSystem/Generator/Structures/TreeGenerator.h>
 
 LaiEngine::GrasslandBiome::GrasslandBiome(int seed) : Biome(GetNoiseParameters(), 1000, 20, seed)
 {
@@ -9,22 +9,22 @@ LaiEngine::GrasslandBiome::GrasslandBiome(int seed) : Biome(GetNoiseParameters()
 
 LaiEngine::BlockType LaiEngine::GrasslandBiome::GetBeachBlock(Rand & rand) const
 {
-	return rand.intInRange(0, 10) > 2 ? BlockType::Grass : BlockType::Dirt;
+	return rand.intInRange(0, 10) > 2 ? BlockType::GRASS : BlockType::DIRT;
 }
 
 LaiEngine::BlockType LaiEngine::GrasslandBiome::GetPlant(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::GrasslandBiome::GetTopBlock(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::GrasslandBiome::GetUnderWaterBlock(Rand & rand) const
 {
-	return rand.intInRange(0, 10) > 8 ? BlockType::Dirt : BlockType::Sand;
+	return rand.intInRange(0, 10) > 8 ? BlockType::DIRT : BlockType::SAND;
 }
 
 void LaiEngine::GrasslandBiome::MakeTree(Rand & rand, Chunk * chunk, int x, int y, int z) const

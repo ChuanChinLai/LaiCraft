@@ -10,9 +10,11 @@ namespace LaiEngine
 		
 		void Update();
 
-		static int FPS();
 		float dt() const;
 	
+		static int   FPS();
+		static float TimeElapsed();
+
 	private:
 
 		sf::Clock m_timer;

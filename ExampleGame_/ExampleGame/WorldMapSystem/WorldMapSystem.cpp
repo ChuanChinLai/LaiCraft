@@ -20,8 +20,10 @@ void LaiEngine::WorldMapSystem::Init()
 {
 	if (m_pWorld == nullptr)
 	{
-		m_pWorld = new World();
+		m_pWorld = new World(this);
 	}
+
+	//m_pWorld->SetSpawnPoint(m_pGameInstance->GetCharacter());
 }
 
 void LaiEngine::WorldMapSystem::Update(float dt)
@@ -37,7 +39,6 @@ void LaiEngine::WorldMapSystem::Release()
 	{
 		delete m_pWorld;
 	}
-
 }
 
 std::thread LaiEngine::WorldMapSystem::UpdateWithThread(float dt)
@@ -50,10 +51,14 @@ void LaiEngine::WorldMapSystem::Draw()
 {
 	m_pWorld->Draw();
 
-	const auto& blocks = BlockFactory::GetAll();
-	
-	for (const auto& block : blocks)
+	for (int i = 0; i < static_cast<int>(BlockType::NUM_TYPES); i++)
 	{
-		m_pGameInstance->Draw(block);
+		BlockType type = static_cast<BlockType>(i);
+		m_pGameInstance->Draw(type);
 	}
+}
+
+LaiEngine::World* LaiEngine::WorldMapSystem::GetWorld()
+{
+	return m_pWorld;
 }

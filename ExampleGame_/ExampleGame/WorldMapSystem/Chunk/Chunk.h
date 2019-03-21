@@ -32,8 +32,8 @@ namespace LaiEngine
 		ChunkBlock* GetBlock(int x, int y, int z);
 		void        SetBlock(int x, int y, int z, const BlockType& type);
 
-		//bool HasLoaded() const noexcept;
-		//void Load(TerrainGenerator* generator);
+		bool HasLoaded() const noexcept;
+		void Load(TerrainGenerator* generator);
 
 	private:
 

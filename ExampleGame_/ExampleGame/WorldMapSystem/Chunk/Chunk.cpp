@@ -83,21 +83,21 @@ void LaiEngine::Chunk::SetBlock(int x, int y, int z, const BlockType& type)
 
 }
 
-//bool LaiEngine::Chunk::HasLoaded() const noexcept
-//{
-//	return m_isLoaded;
-//}
-//
-//void LaiEngine::Chunk::Load(TerrainGenerator* generator)
-//{
-//	if (m_isLoaded) return;
-//
-//	if (generator != nullptr)
-//	{
-//		generator->GenerateTerrainFor(this);
-//		m_isLoaded = true;
-//	}
-//}
+bool LaiEngine::Chunk::HasLoaded() const noexcept
+{
+	return m_isLoaded;
+}
+
+void LaiEngine::Chunk::Load(TerrainGenerator* generator)
+{
+	if (m_isLoaded) return;
+
+	if (generator != nullptr)
+	{
+		generator->GenerateTerrainFor(this);
+		m_isLoaded = true;
+	}
+}
 
 void LaiEngine::Chunk::AddSection()
 {
@@ -110,9 +110,7 @@ void LaiEngine::Chunk::AddSectionWithBlock(int blockY)
 {
 	int index = blockY / CHUNK_SIZE;
 
-	const int size = static_cast<int>(m_chunkSections.size());
-
-	while (size < index + 1)
+	while (static_cast<int>(m_chunkSections.size()) < index + 1)
 	{
 		AddSection();
 	}

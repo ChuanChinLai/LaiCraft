@@ -9,6 +9,7 @@
 
 void LaiEngine::TestGenerator::GenerateTerrainFor(Chunk * chunk)
 {
+
 	for (int x = 0; x < CHUNK_SIZE; x++)
 	{
 		for (int z = 0; z < CHUNK_SIZE; z++)
@@ -16,6 +17,7 @@ void LaiEngine::TestGenerator::GenerateTerrainFor(Chunk * chunk)
 			chunk->SetBlock(x, 0, z, BlockType::DIRT);
 		}
 	}
+
 
 	//chunk->SetBlock(1, 0, 0, BlockType::DIRT);
 	chunk->SetBlock(0, 1, 0, BlockType::GRASS);

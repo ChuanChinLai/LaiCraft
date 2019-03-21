@@ -33,9 +33,12 @@ void LaiEngine::LaiCraftGame::Delete()
 
 void LaiEngine::LaiCraftGame::Init()
 {
-	m_pCharacterSystem = new CharacterSystem(this);
 	m_pRenderingSystem = new RenderingSystem(this);
-	m_pWorldMapSystem = new WorldMapSystem(this);
+	m_pCharacterSystem = new CharacterSystem(this);
+	m_pWorldMapSystem  = new WorldMapSystem(this);
+
+
+
 
 	m_pTestUI = new TestUI(this);
 }
@@ -88,8 +91,10 @@ void LaiEngine::LaiCraftGame::Release()
 
 void LaiEngine::LaiCraftGame::Draw(sf::RenderWindow * window)
 {
-	m_pRenderingSystem->Draw();
 	m_pWorldMapSystem->Draw();
+
+//	m_pRenderingSystem->Draw();
+
 	m_pTestUI->Draw();
 }
 
@@ -98,10 +103,20 @@ void LaiEngine::LaiCraftGame::InputProcess(sf::RenderWindow * window)
 	m_pCharacterSystem->InputProcess(window);
 }
 
-void LaiEngine::LaiCraftGame::Draw(IBlock * block)
+LaiEngine::Character* LaiEngine::LaiCraftGame::GetCharacter()
+{
+	return m_pCharacterSystem->GetCharacter();
+}
+
+LaiEngine::World* LaiEngine::LaiCraftGame::GetWorld()
+{
+	return m_pWorldMapSystem->GetWorld();
+}
+
+void LaiEngine::LaiCraftGame::Draw(const BlockType& type)
 {
 	if (m_pRenderingSystem != nullptr)
 	{
-		m_pRenderingSystem->Draw(block);
+		m_pRenderingSystem->Draw(type);
 	}
 }

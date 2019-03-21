@@ -1,6 +1,6 @@
 #include "LightForestBiome.h"
 
-#include <ExampleGame/World/Generation/Structures/TreeGenerator.h>
+#include <ExampleGame/WorldMapSystem/Generator/Structures/TreeGenerator.h>
 
 LaiEngine::LightForestBiome::LightForestBiome(int seed) : Biome(GetNoiseParameters(), 60, 80, seed)
 {
@@ -8,17 +8,17 @@ LaiEngine::LightForestBiome::LightForestBiome(int seed) : Biome(GetNoiseParamete
 
 LaiEngine::BlockType LaiEngine::LightForestBiome::GetPlant(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::LightForestBiome::GetTopBlock(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::LightForestBiome::GetUnderWaterBlock(Rand & rand) const
 {
-	return rand.intInRange(0, 10) > 9 ? BlockType::Sand : BlockType::Dirt;
+	return rand.intInRange(0, 10) > 9 ? BlockType::SAND : BlockType::DIRT;
 }
 
 void LaiEngine::LightForestBiome::MakeTree(Rand & rand, Chunk * chunk, int x, int y, int z) const

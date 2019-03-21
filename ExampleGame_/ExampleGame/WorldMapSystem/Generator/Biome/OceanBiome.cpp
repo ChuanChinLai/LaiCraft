@@ -1,6 +1,6 @@
 #include "OceanBiome.h"
 
-#include <ExampleGame/World/Generation/Structures/TreeGenerator.h>
+#include <ExampleGame/WorldMapSystem/Generator/Structures/TreeGenerator.h>
 
 LaiEngine::OceanBiome::OceanBiome(int seed) : Biome(GetNoiseParameters(), 50, 100, seed)
 {
@@ -9,17 +9,17 @@ LaiEngine::OceanBiome::OceanBiome(int seed) : Biome(GetNoiseParameters(), 50, 10
 
 LaiEngine::BlockType LaiEngine::OceanBiome::GetPlant(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::OceanBiome::GetTopBlock(Rand & rand) const
 {
-	return BlockType::Grass;
+	return BlockType::GRASS;
 }
 
 LaiEngine::BlockType LaiEngine::OceanBiome::GetUnderWaterBlock(Rand & rand) const
 {
-	return BlockType::Sand;
+	return BlockType::SAND;
 }
 
 void LaiEngine::OceanBiome::MakeTree(Rand & rand, Chunk * chunk, int x, int y, int z) const

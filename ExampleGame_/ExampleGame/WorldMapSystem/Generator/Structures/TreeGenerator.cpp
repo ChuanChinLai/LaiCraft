@@ -2,7 +2,8 @@
 
 #include "StructureBuilder.h"
 
-#include <ExampleGame/World/Block/BlockType.h>
+#include <ExampleGame/WorldMapSystem/Block/BlockType.h>
+
 
 void LaiEngine::MakeOakTree(Chunk * chunk, Random<std::minstd_rand>& rand, int x, int y, int z)
 {
@@ -12,20 +13,20 @@ void LaiEngine::MakeOakTree(Chunk * chunk, Random<std::minstd_rand>& rand, int x
 	int leafSize = 2;
 
 	int newY = h + y;
-	builder.Fill(x - leafSize, x + leafSize, z - leafSize, z + leafSize, newY, BlockType::Leaf);
-	builder.Fill(x - leafSize, x + leafSize, z - leafSize, z + leafSize, newY - 1, BlockType::Leaf);
+	builder.Fill(x - leafSize, x + leafSize, z - leafSize, z + leafSize, newY, BlockType::LEAF);
+	builder.Fill(x - leafSize, x + leafSize, z - leafSize, z + leafSize, newY - 1, BlockType::LEAF);
 
 	for (int32_t zLeaf = -leafSize + 1; zLeaf <= leafSize - 1; zLeaf++)
 	{
-		builder.AddBlock(x, newY + 1, z + zLeaf, BlockType::Leaf);
+		builder.AddBlock(x, newY + 1, z + zLeaf, BlockType::LEAF);
 	}
 
 	for (int32_t xLeaf = -leafSize + 1; xLeaf <= leafSize - 1; xLeaf++)
 	{
-		builder.AddBlock(x + xLeaf, newY + 1, z, BlockType::Leaf);
+		builder.AddBlock(x + xLeaf, newY + 1, z, BlockType::LEAF);
 	}
 
-	builder.MakeColumn(x, y, z, h, BlockType::Trunk);
+	builder.MakeColumn(x, y, z, h, BlockType::TRUNK);
 	builder.Build(chunk);
 }
 
@@ -38,20 +39,20 @@ void LaiEngine::MakePalmTree(Chunk * chunk, Random<std::minstd_rand>& rand, int 
 
 	for (int xLeaf = -diameter; xLeaf <= diameter; xLeaf++)
 	{
-		builder.AddBlock(xLeaf + x, y + height, z, BlockType::Leaf);
+		builder.AddBlock(xLeaf + x, y + height, z, BlockType::LEAF);
 	}
 	for (int zLeaf = -diameter; zLeaf <= diameter; zLeaf++)
 	{
-		builder.AddBlock(x, y + height, zLeaf + z, BlockType::Leaf);
+		builder.AddBlock(x, y + height, zLeaf + z, BlockType::LEAF);
 	}
 
-	builder.AddBlock(x, y + height - 1, z + diameter, BlockType::Leaf);
-	builder.AddBlock(x, y + height - 1, z - diameter, BlockType::Leaf);
-	builder.AddBlock(x + diameter, y + height - 1, z, BlockType::Leaf);
-	builder.AddBlock(x - diameter, y + height - 1, z, BlockType::Leaf);
-	builder.AddBlock(x, y + height + 1, z, BlockType::Leaf);
+	builder.AddBlock(x, y + height - 1, z + diameter, BlockType::LEAF);
+	builder.AddBlock(x, y + height - 1, z - diameter, BlockType::LEAF);
+	builder.AddBlock(x + diameter, y + height - 1, z, BlockType::LEAF);
+	builder.AddBlock(x - diameter, y + height - 1, z, BlockType::LEAF);
+	builder.AddBlock(x, y + height + 1, z, BlockType::LEAF);
 
-	builder.MakeColumn(x, y, z, height, BlockType::Trunk);
+	builder.MakeColumn(x, y, z, height, BlockType::TRUNK);
 	builder.Build(chunk);
 }
 
@@ -60,7 +61,7 @@ namespace LaiEngine
 	void makeCactus1(Chunk* chunk, Random<std::minstd_rand>& rand, int x, int y, int z)
 	{
 		StructureBuilder builder;
-		builder.MakeColumn(x, z, y, rand.intInRange(4, 7), BlockType::Cactus);
+		builder.MakeColumn(x, z, y, rand.intInRange(4, 7), BlockType::CACTUS);
 		builder.Build(chunk);
 	}
 
@@ -68,14 +69,14 @@ namespace LaiEngine
 	{
 		StructureBuilder builder;
 		int height = rand.intInRange(6, 8);
-		builder.MakeColumn(x, y, z, height, BlockType::Cactus);
+		builder.MakeColumn(x, y, z, height, BlockType::CACTUS);
 
 		int stem = height / 2;
 
-		builder.MakeRowX(x - 2, x + 2, stem + y, z, BlockType::Cactus);
-		builder.AddBlock(x - 2, stem + y + 1, z, BlockType::Cactus);
-		builder.AddBlock(x - 2, stem + y + 2, z, BlockType::Cactus);
-		builder.AddBlock(x + 2, stem + y + 1, z, BlockType::Cactus);
+		builder.MakeRowX(x - 2, x + 2, stem + y, z, BlockType::CACTUS);
+		builder.AddBlock(x - 2, stem + y + 1, z, BlockType::CACTUS);
+		builder.AddBlock(x - 2, stem + y + 2, z, BlockType::CACTUS);
+		builder.AddBlock(x + 2, stem + y + 1, z, BlockType::CACTUS);
 
 		builder.Build(chunk);
 	}
@@ -85,14 +86,14 @@ namespace LaiEngine
 	{
 		StructureBuilder builder;
 		int height = rand.intInRange(6, 8);
-		builder.MakeColumn(x, y, z, height, BlockType::Cactus);
+		builder.MakeColumn(x, y, z, height, BlockType::CACTUS);
 
 		int stem = height / 2;
 
-		builder.MakeRowZ(z - 2, z + 2, x, stem + y, BlockType::Cactus);
-		builder.AddBlock(x, stem + y + 1, z - 2, BlockType::Cactus);
-		builder.AddBlock(x, stem + y + 2, z - 2, BlockType::Cactus);
-		builder.AddBlock(x, stem + y + 1, z + 2, BlockType::Cactus);
+		builder.MakeRowZ(z - 2, z + 2, x, stem + y, BlockType::CACTUS);
+		builder.AddBlock(x, stem + y + 1, z - 2, BlockType::CACTUS);
+		builder.AddBlock(x, stem + y + 2, z - 2, BlockType::CACTUS);
+		builder.AddBlock(x, stem + y + 1, z + 2, BlockType::CACTUS);
 
 		builder.Build(chunk);
 	}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GraphicsEngine/Utility/Random.h>
+#include <Engine/Utility/Random.h>
 
 namespace LaiEngine
 {

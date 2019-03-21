@@ -8,7 +8,7 @@ LaiEngine::Biome::Biome(const NoiseParameters & parameters, int treeFreq, int pl
 
 LaiEngine::BlockType LaiEngine::Biome::GetBeachBlock(Rand & rand) const
 {
-	return BlockType::Sand;
+	return BlockType::SAND;
 }
 
 int LaiEngine::Biome::GetHeight(int x, int z, int chunkX, int chunkZ) const

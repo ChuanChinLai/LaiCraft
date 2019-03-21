@@ -1,6 +1,6 @@
 #include "DesertBiome.h"
 
-#include <ExampleGame/World/Generation/Structures/TreeGenerator.h>
+#include <ExampleGame/WorldMapSystem/Generator/Structures/TreeGenerator.h>
 
 LaiEngine::DesertBiome::DesertBiome(int seed) : Biome(GetNoiseParameters(), 1350, 500, seed)
 {
@@ -9,17 +9,17 @@ LaiEngine::DesertBiome::DesertBiome(int seed) : Biome(GetNoiseParameters(), 1350
 
 LaiEngine::BlockType LaiEngine::DesertBiome::GetPlant(Rand & rand) const
 {
-	return BlockType::Sand;
+	return BlockType::SAND;
 }
 
 LaiEngine::BlockType LaiEngine::DesertBiome::GetTopBlock(Rand & rand) const
 {
-	return BlockType::Sand;
+	return BlockType::SAND;
 }
 
 LaiEngine::BlockType LaiEngine::DesertBiome::GetUnderWaterBlock(Rand & rand) const
 {
-	return BlockType::Sand;
+	return BlockType::SAND;
 }
 
 void LaiEngine::DesertBiome::MakeTree(Rand & rand, Chunk * chunk, int x, int y, int z) const

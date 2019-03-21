@@ -1,10 +1,11 @@
 #pragma once
 
-#include <GraphicsEngine/Utility/NoiseGenerator.h>
-#include <GraphicsEngine/Utility/Random.h>
+#include <Engine/Utility/NoiseGenerator.h>
+#include <Engine/Utility/Random.h>
 
-#include <ExampleGame/World/Block/ChunkBlock.h>
-#include <ExampleGame/World/Chunk/Chunk.h>
+
+#include <ExampleGame/WorldMapSystem/Block/ChunkBlock.h>
+#include <ExampleGame/WorldMapSystem/Chunk/Chunk.h>
 
 using Rand = LaiEngine::Random<std::minstd_rand>;
 

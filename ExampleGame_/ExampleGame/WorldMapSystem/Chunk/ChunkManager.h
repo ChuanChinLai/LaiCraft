@@ -31,6 +31,9 @@ namespace LaiEngine
 
 		bool IsValid(int x, int z) const;
 
+		void Load(const int x, const int z);
+		void Unload(const int x, const int z);
+
 	private:
 
 		ChunkMap          m_chunks;

@@ -1,6 +1,6 @@
 #include "StructureBuilder.h"
 
-#include <ExampleGame/World/Chunk/Chunk.h>
+#include <ExampleGame/WorldMapSystem/Chunk/Chunk.h>
 
 void LaiEngine::StructureBuilder::Build(Chunk * chunk)
 {

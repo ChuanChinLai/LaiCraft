@@ -1,5 +1,11 @@
 #include "RenderingSystem.h"
 
+#include <ExampleGame/LaiCraft/LaiCraftGame.h>
+
+#include <ExampleGame/WorldMapSystem/Block/BlockType.h>
+#include <ExampleGame/WorldMapSystem/Block/BlockFactory/BlockFactory.h>
+
+
 LaiEngine::RenderingSystem::RenderingSystem(LaiCraftGame * pGameInstance) : IGameSystem(pGameInstance)
 {
 	Init();
@@ -32,12 +38,16 @@ std::thread LaiEngine::RenderingSystem::UpdateWithThread(float dt)
 	return std::thread([=] { Update(dt);});
 }
 
-void LaiEngine::RenderingSystem::Draw(IBlock * block)
+void LaiEngine::RenderingSystem::Draw(const BlockType& type)
 {
-	m_blockRenderer.Draw(block);
-}
+	IBlock* block = BlockFactory::Get(type);
 
-void LaiEngine::RenderingSystem::Draw()
-{
-//	m_skyboxRenderer.Draw();
+	if (type != BlockType::WATER)
+	{
+		m_blockRenderer.Draw(block);
+	}
+	else
+	{
+		m_waterRenderer.Draw(block);
+	}
 }

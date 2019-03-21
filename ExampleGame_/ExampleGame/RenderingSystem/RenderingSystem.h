@@ -1,15 +1,16 @@
 #pragma once
 
 #include <ExampleGame/BaseClass/IGameSystem.h>
+#include <ExampleGame/WorldMapSystem/Block/BlockType.h>
 
 #include "BlockRenderer.h"
+#include "WaterRenderer.h"
 #include "SkyboxRenderer.h"
 #include "QuadRenderer.h"
 
 namespace LaiEngine
 {
 	class LaiCraftGame;
-	class IBlock;
 
 	class RenderingSystem : public IGameSystem
 	{
@@ -24,12 +25,13 @@ namespace LaiEngine
 
 		std::thread UpdateWithThread(float dt) override;
 
-		void Draw(IBlock* block);
-		void Draw(); 
+		void Draw(const BlockType& type);
 
 	private:
 
 		BlockRenderer  m_blockRenderer;
+		WaterRenderer  m_waterRenderer;
+
 		//SkyboxRenderer m_skyboxRenderer;
 	};
 }

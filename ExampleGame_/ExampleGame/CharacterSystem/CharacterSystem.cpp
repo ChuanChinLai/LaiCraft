@@ -3,6 +3,8 @@
 #include <Engine/Utility/Timer.h>
 #include <Engine/GameObject/Camera.h>
 
+#include <ExampleGame/LaiCraft/LaiCraftGame.h>
+
 #include <iostream>
 
 LaiEngine::CharacterSystem::CharacterSystem(LaiCraftGame * pGameInstance) : IGameSystem(pGameInstance)
@@ -17,23 +19,37 @@ LaiEngine::CharacterSystem::~CharacterSystem()
 
 void LaiEngine::CharacterSystem::Init()
 {
-	Camera::Instance()->SetGameObject(&m_character);
+	if (m_pCharacter == nullptr)
+	{
+		m_pCharacter = new Character(this);
+	}
+
+	Camera::Instance()->SetGameObject(m_pCharacter);
 }
 
 void LaiEngine::CharacterSystem::Update(float dt)
 {
-	m_character.Update(dt);
+	m_pCharacter->Update(m_pGameInstance->GetWorld(), dt);
 
 	Camera::Instance()->Update();
 }
 
 void LaiEngine::CharacterSystem::Release()
 {
+	if (m_pCharacter != nullptr)
+	{
+		delete m_pCharacter;
+	}
 }
 
 void LaiEngine::CharacterSystem::InputProcess(sf::RenderWindow * window)
 {
-	m_character.HandleInput(window);
+	m_pCharacter->HandleInput(window);
+}
+
+LaiEngine::Character* LaiEngine::CharacterSystem::GetCharacter()
+{
+	return m_pCharacter;
 }
 
 std::thread LaiEngine::CharacterSystem::UpdateWithThread(float dt)

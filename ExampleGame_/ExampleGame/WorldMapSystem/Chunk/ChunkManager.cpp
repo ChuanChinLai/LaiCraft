@@ -2,7 +2,9 @@
 
 #include <ExampleGame/WorldMapSystem/WorldConstants.h>
 #include <ExampleGame/WorldMapSystem/Chunk/Chunk.h>
+
 #include <ExampleGame/WorldMapSystem/Generator/Terrain/TestGenerator.h>
+#include <ExampleGame/WorldMapSystem/Generator/Terrain/ClassicWorldGenerator.h>
 
 #include <glm/vec2.hpp>
 
@@ -11,7 +13,7 @@
 
 LaiEngine::ChunkManager::ChunkManager(World * world) : m_pWorld(world), m_pTerrainGenerator(nullptr)
 {
-	m_pTerrainGenerator = new TestGenerator();
+	m_pTerrainGenerator = new ClassicWorldGenerator();
 
 	for (int x = 0; x < WORLD_SIZE; x++)
 	{
@@ -86,4 +88,19 @@ LaiEngine::TerrainGenerator* LaiEngine::ChunkManager::GetTerrainGenerator() cons
 bool LaiEngine::ChunkManager::IsValid(int x, int z) const
 {
 	return m_chunks.count({ x, z });
+}
+
+void LaiEngine::ChunkManager::Load(const int x, const int z)
+{
+	GetChunk(x, z)->Load(m_pTerrainGenerator);
+}
+
+void LaiEngine::ChunkManager::Unload(const int x, const int z)
+{
+	if (IsValid(x, z))
+	{
+		const VectorXZ pos = { x, z };
+		delete m_chunks[pos];
+		m_chunks.erase(pos);
+	}
 }
