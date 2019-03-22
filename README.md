@@ -1,9 +1,10 @@
 # The LaiCraft
 
-LaiCraft is a 3D Minecraft-Like game built from the ground up using C++ and OpenGL with [SFML](https://www.sfml-dev.org/).
+LaiCraft is a 3D Minecraft-Like game built from the ground up using **C++**, **OpenGL** and [SFML](https://www.sfml-dev.org/).
 
 ### Video: 
-https://www.youtube.com/watch?v=hIp613w-0aY&feature=youtu.be
+
+[![](http://img.youtube.com/vi/hIp613w-0aY/0.jpg)](http://www.youtube.com/watch?v=hIp613w-0aY "")
 
 ### How to:
 
