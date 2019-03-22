@@ -17,26 +17,10 @@ https://www.youtube.com/watch?v=hIp613w-0aY&feature=youtu.be
 
 ## Features
 
-* Source code in LaiCraft/Engine
+* Minecraft-Like Gameplay
 
-* Component-based GameObjects, allowing users to add component classes to their GameObjects
+* Dynamic Map Generation
 
-* Custom Engine Library, including Scene, Math, Physics, etc...
-
-* High Speed Memory Allocator, reducing average dynamic allocation time by 60%
-
-* Shared_ptr and Weak_ptr for resource management and avoiding memory leaks
+* Instanced rendering
 
 * One-click **Lua Asset Builder**
-
-## Gameplay Programming
-
-* Source code in LaiEngine/ExampleGame_
-
-* Custom event system with Observer pattern, improving performance for GameObjects spawning and destroying
-
-* Implemented artificial intelligence with State pattern, facilitating changes to the GameObjects’ behaviors based on the project requirements 
- 
-* Implemented game subsystems with Mediator pattern and Façade pattern, making it easier to maintain gameplay features  
-
-* Created a Lua-driven balance sheet system, to help facilitate the game design workflow and rapid iteration
