@@ -3,6 +3,7 @@
 #include <iostream>
 
 int LaiEngine::Timer::s_frameCount = 0;
+int LaiEngine::Timer::s_framePerSecond = 0;
 float LaiEngine::Timer::s_timeElapsed = 0.0f;
 
 void LaiEngine::Timer::Update()
@@ -12,6 +13,7 @@ void LaiEngine::Timer::Update()
 	if (m_timer.getElapsedTime().asSeconds() >= 1.0f)
 	{
 		//std::cout << "FPS: " << s_frameCount << std::endl;
+		s_framePerSecond = s_frameCount;
 		s_frameCount = 0;
 		m_timer.restart();
 	}
@@ -22,7 +24,7 @@ void LaiEngine::Timer::Update()
 
 int LaiEngine::Timer::FPS()
 {
-	return s_frameCount;
+	return s_framePerSecond;
 }
 
 float LaiEngine::Timer::TimeElapsed()

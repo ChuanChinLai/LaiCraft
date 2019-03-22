@@ -25,7 +25,7 @@ void LaiEngine::TestUI::Init()
 
 void LaiEngine::TestUI::Update()
 {
-	m_text = std::to_string(Timer::FPS());
+	m_text = "FPS: " + std::to_string(Timer::FPS());
 }
 
 void LaiEngine::TestUI::Release()
