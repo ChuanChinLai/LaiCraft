@@ -38,10 +38,11 @@ namespace LaiEngine
 
 
 		//public functions for IGameSystem:
-		Character* GetCharacter();
-		World*     GetWorld();
+		Character* GetCharacter() const;
+		World*     GetWorld() const;
 
-		std::string GetItemString(const int id);
+		std::string GetItemString(const int id) const;
+		int GetHeldItem() const;
 
 		void Draw(const BlockType& type);
 

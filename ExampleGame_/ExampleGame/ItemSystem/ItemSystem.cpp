@@ -54,7 +54,6 @@ void LaiEngine::ItemSystem::Update(float dt)
 					timer.restart();
 
 					const auto& material = Material::ToMaterial(block->GetType());
-					std::cout << material.id << std::endl;
 					AddItem(material);
 					world->SetBlock(x, y, z, BlockType::AIR);
 
@@ -64,7 +63,7 @@ void LaiEngine::ItemSystem::Update(float dt)
 				{
 					timer.restart();
 
-					auto& stack = GetHeldItems();
+					auto& stack = m_items[m_heldItem];
 					auto& material = stack.GetMaterial();
 
 					if (material.id == Material::ID::Nothing)
@@ -158,17 +157,17 @@ void LaiEngine::ItemSystem::AddItem(const Material & material)
 	}
 }
 
-LaiEngine::ItemStack & LaiEngine::ItemSystem::GetHeldItems()
+int LaiEngine::ItemSystem::GetHeldItem() const
 {
-	return m_items[m_heldItem];
+	return m_heldItem;
 }
 
-std::string LaiEngine::ItemSystem::GetItemName(const int id)
+std::string LaiEngine::ItemSystem::GetItemName(const int id) const
 {
 	return m_items[id].GetMaterial().name;
 }
 
-int LaiEngine::ItemSystem::GetNumberOfItem(const int id)
+int LaiEngine::ItemSystem::GetNumberOfItem(const int id) const
 {
 	return m_items[id].GetNumInStack();
 }

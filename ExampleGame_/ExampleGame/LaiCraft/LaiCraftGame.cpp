@@ -116,19 +116,24 @@ void LaiEngine::LaiCraftGame::InputProcess(sf::RenderWindow * window)
 	m_pItemSystem->InputProcess(window);
 }
 
-LaiEngine::Character* LaiEngine::LaiCraftGame::GetCharacter()
+LaiEngine::Character* LaiEngine::LaiCraftGame::GetCharacter() const
 {
 	return m_pCharacterSystem->GetCharacter();
 }
 
-LaiEngine::World* LaiEngine::LaiCraftGame::GetWorld()
+LaiEngine::World* LaiEngine::LaiCraftGame::GetWorld() const
 {
 	return m_pWorldMapSystem->GetWorld();
 }
 
-std::string LaiEngine::LaiCraftGame::GetItemString(const int id)
+std::string LaiEngine::LaiCraftGame::GetItemString(const int id) const
 {
 	return m_pItemSystem->GetItemName(id) + ": " + to_string(m_pItemSystem->GetNumberOfItem(id));
+}
+
+int LaiEngine::LaiCraftGame::GetHeldItem() const
+{
+	return m_pItemSystem->GetHeldItem();
 }
 
 void LaiEngine::LaiCraftGame::Draw(const BlockType& type)

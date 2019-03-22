@@ -28,10 +28,10 @@ namespace LaiEngine
 		std::thread UpdateWithThread(float dt) override;
 
 		void AddItem(const Material& material);
-		ItemStack& GetHeldItems();
 
-		std::string GetItemName(const int id); 
-		int GetNumberOfItem(const int id);
+		std::string GetItemName(const int id) const; 
+		int GetNumberOfItem(const int id) const;
+		int GetHeldItem() const ;
 
 	private:
 

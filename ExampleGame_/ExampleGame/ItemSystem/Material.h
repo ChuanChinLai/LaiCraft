@@ -10,9 +10,10 @@ using namespace std;
 
 namespace LaiEngine
 {
-	struct Material : public NonCopyable
+	class Material : public NonCopyable
 	{
-		enum ID
+	public:
+		enum class ID
 		{
 			Nothing,
 			Cactus,

@@ -3,7 +3,6 @@
 
 const LaiEngine::Material LaiEngine::Material::NOTHING(ID::Nothing, 0, false, "None");
 
-
 const LaiEngine::Material LaiEngine::Material::CACTUS_BLOCK(ID::Cactus, 99, true, "Cactus Block");
 const LaiEngine::Material LaiEngine::Material::DIRT_BLOCK(ID::Dirt, 99, true, "Dirt Block");
 const LaiEngine::Material LaiEngine::Material::GRASS_BLOCK(ID::Grass, 99, true, "Grass Block");
@@ -21,28 +20,28 @@ LaiEngine::BlockType LaiEngine::Material::ToBlockType() const
 {
 	switch (id)
 	{
-	case Nothing:
+	case Material::ID::Nothing:
 		return BlockType::AIR;
 
-	case Cactus:
+	case Material::ID::Cactus:
 		return BlockType::CACTUS;
 
-	case Dirt:
+	case Material::ID::Dirt:
 		return BlockType::DIRT;
 
-	case Grass:
+	case Material::ID::Grass:
 		return BlockType::GRASS;
 
-	case Gravel:
+	case Material::ID::Gravel:
 		return BlockType::GRAVEL;
 
-	case Leaf:
+	case Material::ID::Leaf:
 		return BlockType::LEAF;
 
-	case Sand:
+	case Material::ID::Sand:
 		return BlockType::SAND;
 
-	case Trunk:
+	case Material::ID::Trunk:
 		return BlockType::TRUNK;
 
 	default:

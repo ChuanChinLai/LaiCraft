@@ -103,7 +103,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir)temp\$(PlatformTarget)\$(Configuration)\output\;$(SolutionDir)External\glfw-3.2.1\lib\$(PlatformTarget)\;$(SolutionDir)External\SFML\lib\$(PlatformTarget)\;$(SolutionDir)External\freetype-2.9.1\lib\$(PlatformTarget)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;freetyped.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "$(GameInstallDir)$(TargetFileName)" /y</Command>

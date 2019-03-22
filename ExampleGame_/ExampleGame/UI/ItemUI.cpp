@@ -19,10 +19,12 @@ LaiEngine::ItemUI::~ItemUI()
 
 void LaiEngine::ItemUI::Init()
 {
+	m_color = { 0.5f, 0.8f, 0.2f };
+
 	for (int i = 0; i < 5; i++)
 	{
 		std::string text = std::to_string(i);
-		glm::vec2 pos = { 25.0f, 50.0f * i + 100.0f };
+		glm::vec2 pos = { 25.0f, 750.0f - 50.0f * i};
 		m_itemText.push_back(std::make_pair(text, pos));
 	}
 }
@@ -48,8 +50,14 @@ void LaiEngine::ItemUI::Draw()
 		const auto& text = m_itemText[i].first;
 		const auto& pos = m_itemText[i].second;
 
-		static glm::vec3 color = { 0.5f, 0.8f, 0.2f };
-		m_pFont->Draw(text, pos.x, pos.y, 1.0f, color);
+		if (i == m_pGameInstance->GetHeldItem())
+		{
+			m_pFont->Draw(text, pos.x, pos.y, 1.0f, { 1.0f, 0, 0 });
+		}
+		else
+		{
+			m_pFont->Draw(text, pos.x, pos.y, 1.0f, m_color);
+		}
 	}
 }
 

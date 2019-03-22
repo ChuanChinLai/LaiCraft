@@ -27,7 +27,7 @@ namespace LaiEngine
 
 	private:
 
-		glm::vec3 m_color = { 0.5f, 0.8f, 0.2f };
+		glm::vec3 m_color;
 		std::vector<std::pair<std::string, glm::vec2>>  m_itemText;
 	};
 }
