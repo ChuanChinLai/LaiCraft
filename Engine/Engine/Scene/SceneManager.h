@@ -5,6 +5,7 @@
 namespace sf
 {
 	class RenderWindow;
+	class Event;
 }
 
 namespace LaiEngine
@@ -31,7 +32,7 @@ namespace LaiEngine
 		void Draw(sf::RenderWindow* window);
 
 		void SetWindow(sf::RenderWindow* window);
-		void InputProcess(sf::RenderWindow* window);
+		void InputProcess(sf::RenderWindow* window, sf::Event& event);
 
 	private:
 

@@ -18,11 +18,11 @@ namespace LaiEngine
 		Character(CharacterSystem* system);
 
 		void Update(World * world, float dt);
-		void HandleInput(sf::RenderWindow* window);
+		void HandleInput(sf::RenderWindow* window, sf::Event& event);
 
 	private:
 
-		void KeyboardInput();
+		void KeyboardInput(sf::RenderWindow* window, sf::Event& event);
 		void MouseInput(sf::RenderWindow* window);
 
 		void Collide(World* world, const glm::vec3& vel, float dt);
@@ -37,6 +37,6 @@ namespace LaiEngine
 
 		float m_speed      = 0.5f;
 		bool  m_isOnGround = false;
-
+		bool  m_isFlying = false;
 	};
 }

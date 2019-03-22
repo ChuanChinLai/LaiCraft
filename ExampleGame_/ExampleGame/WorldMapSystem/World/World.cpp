@@ -20,14 +20,6 @@
 LaiEngine::World::World(WorldMapSystem* system) : m_pSystem(system), m_chunkManager(this)
 {
 
-
-	//if (player != nullptr)
-	//{
-	//	player->position = m_playerSpawnPoint; 
-	//	player->position.y += 15;
-	//}
-
-	//player->position = { 50, 100, 50 };
 }
 
 LaiEngine::World::~World()

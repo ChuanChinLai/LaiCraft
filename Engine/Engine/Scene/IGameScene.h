@@ -7,6 +7,7 @@
 namespace sf
 {
 	class RenderWindow;
+	class Event;
 }
 
 namespace LaiEngine
@@ -25,7 +26,7 @@ namespace LaiEngine
 		virtual void Release() = 0;
 		
 		virtual void Draw(sf::RenderWindow* window) = 0;
-		virtual void InputProcess(sf::RenderWindow* window) = 0;
+		virtual void InputProcess(sf::RenderWindow* window, sf::Event& event) = 0;
 
 	protected:
 		SceneManager*	m_pSceneManager;

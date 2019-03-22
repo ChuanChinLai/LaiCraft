@@ -5,6 +5,7 @@
 namespace sf
 {
 	class RenderWindow; 
+	class Event;
 }
 
 namespace LaiEngine
@@ -23,7 +24,7 @@ namespace LaiEngine
 		virtual void GameLoop() = 0;
 		virtual void Release() = 0;
 
-		virtual void HandleEvents() = 0;
+		virtual void HandleEvents(sf::Event& event) = 0;
 
 		sf::RenderWindow*  GetRenderWindow() const;
 		LaiEngine::SceneManager* GetSceneManager() const;

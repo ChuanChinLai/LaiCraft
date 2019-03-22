@@ -46,17 +46,19 @@ void LaiEngine::LaiCraftGame::Init()
 
 void LaiEngine::LaiCraftGame::Update(float dt)
 {
-	m_pCharacterSystem->Update(dt);
+	//m_threads.push_back(m_pWorldMapSystem->UpdateWithThread(dt));
+	//m_threads.push_back(m_pCharacterSystem->UpdateWithThread(dt));
+	//m_threads.push_back(m_pRenderingSystem->UpdateWithThread(dt));
+	//m_threads.push_back(m_pItemSystem->UpdateWithThread(dt));
 
+	m_pCharacterSystem->Update(dt);
 	m_pWorldMapSystem->Update(dt);
 	m_pRenderingSystem->Update(dt);
 	m_pItemSystem->Update(dt);
 
+
 	m_pItemUI->Update();
 	m_pTestUI->Update();
-
-	//m_threads.push_back(m_pRenderingSystem->UpdateWithThread());
-	//m_threads.push_back(m_pTestUI->UpdateWithThread());
 
 	//for (auto& thread : m_threads)
 	//{
@@ -110,9 +112,9 @@ void LaiEngine::LaiCraftGame::Draw(sf::RenderWindow * window)
 	m_pTestUI->Draw();
 }
 
-void LaiEngine::LaiCraftGame::InputProcess(sf::RenderWindow * window)
+void LaiEngine::LaiCraftGame::InputProcess(sf::RenderWindow * window, sf::Event& event)
 {
-	m_pCharacterSystem->InputProcess(window);
+	m_pCharacterSystem->InputProcess(window, event);
 	m_pItemSystem->InputProcess(window);
 }
 

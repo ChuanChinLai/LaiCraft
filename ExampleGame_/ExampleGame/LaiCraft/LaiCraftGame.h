@@ -34,7 +34,7 @@ namespace LaiEngine
 		void Release();
 
 		void Draw(sf::RenderWindow* window);
-		void InputProcess(sf::RenderWindow* window);
+		void InputProcess(sf::RenderWindow* window, sf::Event& event);
 
 
 		//public functions for IGameSystem:

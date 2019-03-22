@@ -13,21 +13,15 @@
 
 LaiEngine::Character::Character(CharacterSystem* system) : m_pSystem(system), m_rigidbody(this), m_collider({ 0.5f, 2.0f, 0.5f })
 {
-	//const int numItems = 5; 
-
-	//for (int i = 0; i < numItems; i++)
-	//{
-	//	m_items.emplace_back(Material::NOTHING, 0);
-	//}
-
-	//m_rigidbody.SetUseGravity(true);
-
 	position = { 0, 10, 10 };
 }
 
 void LaiEngine::Character::Update(World * world, float dt)
 {
-	m_rigidbody.Update(dt);
+	if (m_isFlying == false)
+	{
+		m_rigidbody.Update(dt);
+	}
 
 	position.x += m_rigidbody.velocity.x * dt;
 	position.x = position.x < 0.0f ? 0 : position.x;
@@ -49,13 +43,13 @@ void LaiEngine::Character::Update(World * world, float dt)
 	m_rigidbody.velocity.z = abs(m_rigidbody.velocity.z) < Math::EPSILON ? 0 : m_rigidbody.velocity.z;
 }
 
-void LaiEngine::Character::HandleInput(sf::RenderWindow* window)
+void LaiEngine::Character::HandleInput(sf::RenderWindow* window, sf::Event& event)
 {
-	KeyboardInput();
+	KeyboardInput(window, event);
 	MouseInput(window);
 }
 
-void LaiEngine::Character::KeyboardInput()
+void LaiEngine::Character::KeyboardInput(sf::RenderWindow* window, sf::Event& event)
 {
 	glm::vec3 dv;
 
@@ -84,6 +78,21 @@ void LaiEngine::Character::KeyboardInput()
 	{
 		Jump();
 	}
+
+	if (event.type == sf::Event::KeyReleased)
+	{
+		if (event.key.code == sf::Keyboard::F)
+		{
+			m_isFlying = !m_isFlying;
+			m_speed = (m_isFlying == false) ? 0.5f : 2.0f;
+		}
+	}
+
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
+	//{
+
+
+	//}
 
 	m_rigidbody.velocity += dv;
 }
@@ -160,6 +169,14 @@ void LaiEngine::Character::Collide(World* world, const glm::vec3 & vel, float dt
 
 void LaiEngine::Character::Jump()
 {
+	if (m_isFlying)
+	{
+		glm::vec3 dv = { 0, 5.0f, 0 };
+		position.y += 0.5f;
+		return;
+	}
+
+
 	if (m_isOnGround)
 	{
 		m_isOnGround = false;

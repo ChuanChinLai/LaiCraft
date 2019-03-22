@@ -15,6 +15,6 @@ namespace LaiEngine
 		void Release() override;
 
 	private:
-		void HandleEvents() override;
+		void HandleEvents(sf::Event& event) override;
 	}; 
 }

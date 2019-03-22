@@ -33,7 +33,7 @@ void LaiEngine::GamingScene::Draw(sf::RenderWindow* window)
 	LaiCraftGame::Instance()->Draw(window);
 }
 
-void LaiEngine::GamingScene::InputProcess(sf::RenderWindow* window)
+void LaiEngine::GamingScene::InputProcess(sf::RenderWindow* window, sf::Event& event)
 {
-	LaiCraftGame::Instance()->InputProcess(window);
+	LaiCraftGame::Instance()->InputProcess(window, event);
 }

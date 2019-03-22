@@ -20,7 +20,7 @@ namespace LaiEngine
 		virtual void Update(float dt) override;
 		virtual void Release() override;
 
-		void InputProcess(sf::RenderWindow* window);
+		void InputProcess(sf::RenderWindow* window, sf::Event& event);
 
 		Character* GetCharacter();
 

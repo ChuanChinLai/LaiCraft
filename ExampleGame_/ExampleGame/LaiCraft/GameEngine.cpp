@@ -56,9 +56,10 @@ void LaiEngine::GameEngine::GameLoop()
 	while (m_bIsGameRunning)
 	{
 		auto deltaTime = timer.dt();
+		sf::Event event;
 
 		pSceneManager->Update(deltaTime);
-		pSceneManager->InputProcess(pRenderWindow);
+		//pSceneManager->InputProcess(pRenderWindow, event);
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -67,7 +68,7 @@ void LaiEngine::GameEngine::GameLoop()
 
 		pRenderWindow->display();
 
-		HandleEvents();
+		HandleEvents(event);
 
 		timer.Update();
 	}
@@ -78,11 +79,14 @@ void LaiEngine::GameEngine::Release()
 
 }
 
-void LaiEngine::GameEngine::HandleEvents()
+void LaiEngine::GameEngine::HandleEvents(sf::Event& event)
 {
-	sf::Event event;
-
 	sf::RenderWindow* pRenderWindow = GetRenderWindow();
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	{
+		m_bIsGameRunning = false;
+	}
 
 	while (pRenderWindow->pollEvent(event))
 	{
@@ -90,10 +94,9 @@ void LaiEngine::GameEngine::HandleEvents()
 		{
 			m_bIsGameRunning = false; 
 		}
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		else
 		{
-			m_bIsGameRunning = false;
+			GetSceneManager()->InputProcess(pRenderWindow, event);
 		}
 	}
 }

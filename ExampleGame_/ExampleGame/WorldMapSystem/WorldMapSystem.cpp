@@ -43,7 +43,7 @@ void LaiEngine::WorldMapSystem::Release()
 
 std::thread LaiEngine::WorldMapSystem::UpdateWithThread(float dt)
 {
-	return std::thread();
+	return std::thread([=] { Update(dt);});
 }
 
 

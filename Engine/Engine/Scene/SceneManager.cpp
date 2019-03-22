@@ -67,10 +67,10 @@ void LaiEngine::SceneManager::SetWindow(sf::RenderWindow * window)
 	m_pWindow = window;
 }
 
-void LaiEngine::SceneManager::InputProcess(sf::RenderWindow* window)
+void LaiEngine::SceneManager::InputProcess(sf::RenderWindow* window, sf::Event& event)
 {
 	if (m_pCurrentScene != nullptr)
 	{
-		m_pCurrentScene->InputProcess(window);
+		m_pCurrentScene->InputProcess(window, event);
 	}
 }

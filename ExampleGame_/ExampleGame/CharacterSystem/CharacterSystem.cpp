@@ -42,9 +42,9 @@ void LaiEngine::CharacterSystem::Release()
 	}
 }
 
-void LaiEngine::CharacterSystem::InputProcess(sf::RenderWindow * window)
+void LaiEngine::CharacterSystem::InputProcess(sf::RenderWindow * window, sf::Event& event)
 {
-	m_pCharacter->HandleInput(window);
+	m_pCharacter->HandleInput(window, event);
 }
 
 LaiEngine::Character* LaiEngine::CharacterSystem::GetCharacter()
@@ -54,5 +54,5 @@ LaiEngine::Character* LaiEngine::CharacterSystem::GetCharacter()
 
 std::thread LaiEngine::CharacterSystem::UpdateWithThread(float dt)
 {
-	return std::thread();
+	return std::thread([=] { Update(dt);});
 }

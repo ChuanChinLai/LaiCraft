@@ -135,7 +135,7 @@ void LaiEngine::ItemSystem::InputProcess(sf::RenderWindow * window)
 
 std::thread LaiEngine::ItemSystem::UpdateWithThread(float dt)
 {
-	return std::thread();
+	return std::thread([=] { Update(dt);});
 }
 
 void LaiEngine::ItemSystem::AddItem(const Material & material)

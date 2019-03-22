@@ -16,7 +16,7 @@ namespace LaiEngine
 		void Release() override;
 
 		void Draw(sf::RenderWindow* window) override;
-		void InputProcess(sf::RenderWindow* window) override;
+		void InputProcess(sf::RenderWindow* window, sf::Event& event) override;
 
 	private:
 
