@@ -21,5 +21,9 @@ namespace LaiEngine
 		virtual void Draw() override;
 
 		std::thread UpdateWithThread() override;
+
+	private:
+		std::string   m_text;
+		std::string   m_flying;
 	};
 }

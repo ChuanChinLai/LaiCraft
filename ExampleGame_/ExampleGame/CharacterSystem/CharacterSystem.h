@@ -22,7 +22,8 @@ namespace LaiEngine
 
 		void InputProcess(sf::RenderWindow* window, sf::Event& event);
 
-		Character* GetCharacter();
+		Character* GetCharacter() const;
+		bool       IsCharacterFlying() const;
 
 		std::thread UpdateWithThread(float dt) override;
 

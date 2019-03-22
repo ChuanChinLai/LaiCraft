@@ -47,9 +47,14 @@ void LaiEngine::CharacterSystem::InputProcess(sf::RenderWindow * window, sf::Eve
 	m_pCharacter->HandleInput(window, event);
 }
 
-LaiEngine::Character* LaiEngine::CharacterSystem::GetCharacter()
+LaiEngine::Character* LaiEngine::CharacterSystem::GetCharacter() const
 {
 	return m_pCharacter;
+}
+
+bool LaiEngine::CharacterSystem::IsCharacterFlying() const
+{
+	return m_pCharacter->IsFlying();
 }
 
 std::thread LaiEngine::CharacterSystem::UpdateWithThread(float dt)

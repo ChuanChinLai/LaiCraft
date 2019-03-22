@@ -20,6 +20,8 @@ namespace LaiEngine
 		void Update(World * world, float dt);
 		void HandleInput(sf::RenderWindow* window, sf::Event& event);
 
+		bool IsFlying() const;
+
 	private:
 
 		void KeyboardInput(sf::RenderWindow* window, sf::Event& event);

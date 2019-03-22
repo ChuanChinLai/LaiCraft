@@ -138,6 +138,11 @@ int LaiEngine::LaiCraftGame::GetHeldItem() const
 	return m_pItemSystem->GetHeldItem();
 }
 
+bool LaiEngine::LaiCraftGame::IsCharacterFlying() const
+{
+	return m_pCharacterSystem->IsCharacterFlying();
+}
+
 void LaiEngine::LaiCraftGame::Draw(const BlockType& type)
 {
 	if (m_pRenderingSystem != nullptr)

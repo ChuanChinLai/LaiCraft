@@ -22,15 +22,13 @@ namespace LaiEngine
 		virtual void Update() = 0;
 		virtual void Release() = 0;
 
-		virtual void Draw();
+		virtual void Draw() = 0;
 
 		virtual std::thread UpdateWithThread() = 0;
 
 	protected:
 
 		LaiCraftGame* m_pGameInstance;
-		std::string   m_text;
-
-		Font* m_pFont = nullptr;
+		Font*         m_pFont = nullptr;
 	};
 }

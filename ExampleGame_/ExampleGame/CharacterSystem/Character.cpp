@@ -49,6 +49,11 @@ void LaiEngine::Character::HandleInput(sf::RenderWindow* window, sf::Event& even
 	MouseInput(window);
 }
 
+bool LaiEngine::Character::IsFlying() const
+{
+	return m_isFlying;
+}
+
 void LaiEngine::Character::KeyboardInput(sf::RenderWindow* window, sf::Event& event)
 {
 	glm::vec3 dv;

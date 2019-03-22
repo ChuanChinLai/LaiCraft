@@ -44,6 +44,8 @@ namespace LaiEngine
 		std::string GetItemString(const int id) const;
 		int GetHeldItem() const;
 
+		bool IsCharacterFlying() const;
+
 		void Draw(const BlockType& type);
 
 	protected:
